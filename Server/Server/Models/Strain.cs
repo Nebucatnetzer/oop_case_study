@@ -10,10 +10,16 @@ namespace Server.Models
     [DataContract]
     public class Strain
     {
+        private int _StrainId;
         private string _Name;
 
         [DataMember]
+        public int StrainId { get => _StrainId; set => _StrainId = value; }
+        [DataMember]
         public string Name { get => _Name; set => _Name = value; }
+
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Strain() { }
         public Strain (string name)
         {
             this.Name = name;

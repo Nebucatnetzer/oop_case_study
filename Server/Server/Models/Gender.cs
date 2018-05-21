@@ -10,11 +10,16 @@ namespace Server.Models
     [DataContract]
     public class Gender
     {
+        private int _GenderId;
         private string _Name;
 
         [DataMember]
+        public int GenderId { get => _GenderId; set => _GenderId = value; }
+        [DataMember]
         public string Name { get => _Name; set => _Name = value; }
 
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Gender() { }
         public Gender (string name)
         {
             this.Name = name;

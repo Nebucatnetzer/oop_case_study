@@ -10,11 +10,14 @@ namespace Server.Models
     [DataContract]
     public class Result
     {
+        private int _ResultId;
         private string _Name;
         private string _Description;
         private Strain _Strain;
         private bool _Infected;
 
+        [DataMember]
+        public int ResultId { get => _ResultId; set => _ResultId = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
         [DataMember]
@@ -24,6 +27,8 @@ namespace Server.Models
         [DataMember]
         public bool Infected { get => _Infected; set => _Infected = value; }
 
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Result() { }
         public Result (string name, string description, Strain strain, bool infected)
         {
             this.Name = name;

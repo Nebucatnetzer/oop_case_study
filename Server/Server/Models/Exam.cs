@@ -10,11 +10,14 @@ namespace Server.Models
     [DataContract]
     public class Exam
     {
+        private int _ExamId;
         private DateTime _Date;
         private Doctor _Doctor;
         private Person _Patient;
         private Result _Result;
 
+        [DataMember]
+        public int ExamId  { get => _ExamId; set => _ExamId = value; }
         [DataMember]
         public DateTime Date { get => _Date; set => _Date = value; }
         [DataMember]
@@ -24,6 +27,8 @@ namespace Server.Models
         [DataMember]
         public Result Result { get => _Result; set => _Result = value; }
 
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Exam() { }
         public Exam (Doctor doctor, Person patient, Result result)
         {
             this.Date = DateTime.Now;

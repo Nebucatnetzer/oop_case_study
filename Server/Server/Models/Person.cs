@@ -10,6 +10,7 @@ namespace Server.Models
     [DataContract]
     public class Person
     {
+        private int _PersonId;
         private string _FirstName;
         private string _LastName;
         private Gender _Gender;
@@ -17,6 +18,8 @@ namespace Server.Models
         private string _StreetName;
         private City _City;
 
+        [DataMember]
+        public int PersonId { get => _PersonId; set => _PersonId = value; }
         [DataMember]
         public string FirstName { get => _FirstName; set => _FirstName = value; }
         [DataMember]
@@ -30,6 +33,8 @@ namespace Server.Models
         [DataMember]
         public City City { get => _City; set => _City = value; }
 
+        [Obsolete("Only needed for serialization and materialization", true)]
+        public Person() { }
         public Person (string firstName, string lastName, Gender gender, Salutation salutation,
                        string streetName, City city)
         {
