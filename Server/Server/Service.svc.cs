@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Server.Models;
+using Server.DB;
 
 namespace Server
 {
@@ -14,47 +15,56 @@ namespace Server
     {
         public List<Doctor> GetDoctors()
         {
-            throw new NotImplementedException();
+            DoctorDB dataaccess = new DoctorDB();
+            return dataaccess.GetAllDoctors();
         }
 
         public List<Gender> GetGenders()
         {
-            throw new NotImplementedException();
+            GenderDB dataaccess = new GenderDB();
+            return dataaccess.GetAllGenders();
         }
 
         public List<Salutation> GetSalutations()
         {
-            throw new NotImplementedException();
+            SalutationDB dataaccess = new SalutationDB();
+            return dataaccess.GetAllSalutations();
         }
 
         public List<Strain> GetStrains()
         {
-            throw new NotImplementedException();
+            StrainDB dataaccess = new StrainDB();
+            return dataaccess.GetAllStrains();
         }
 
         public void WriteCity(City city)
         {
-            throw new NotImplementedException();
+            CityDB dataaccess = new CityDB();
+            dataaccess.CreateCity(city);
         }
 
         public void WriteCountry(Country country)
         {
-            throw new NotImplementedException();
+            CountryDB dataaccess = new CountryDB();
+            dataaccess.CreateCountry(country);
         }
 
         public void WriteExam(Exam exam)
         {
-            throw new NotImplementedException();
+            ExamDB dataaccess = new ExamDB();
+            dataaccess.CreateExam(exam);
         }
 
         public void WritePatient(Person person)
         {
-            throw new NotImplementedException();
+            PersonDB dataaccess = new PersonDB();
+            dataaccess.CreatePerson(person);
         }
 
         public void WriteResult(Result result)
         {
-            throw new NotImplementedException();
+            ResultDB dataaccess = new ResultDB();
+            dataaccess.CreateResult(result);
         }
     }
 }
