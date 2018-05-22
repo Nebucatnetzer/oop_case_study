@@ -8,24 +8,26 @@ using System.ServiceModel;
 namespace Server.Models
 {
     [DataContract]
-    public class Doctor
+    public class Doctor : Person
     {
         private int _DoctorId;
-        private Person _Person;
         private Status _Status;
 
         [DataMember]
         public int DoctorId { get => _DoctorId; set => _DoctorId = value; }
         [DataMember]
-        public Person Person { get => _Person; set => _Person = value; }
-        [DataMember]
-        public Status Status { get => _Status; set => _Status = value; }
+        public virtual Status Status { get => _Status; set => _Status = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Doctor() { }
-        public Doctor (Person person, Status status)
+        public Doctor(string firstName, string lastName, Gender gender, Salutation salutation,
+                       string streetName, City city, Status status)
         {
-            this.Person = person;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Gender = gender;
+            this.Salutation = salutation;
+            this.StreetName = streetName;
+            this.City = city;
             this.Status = status;
         }
     }
