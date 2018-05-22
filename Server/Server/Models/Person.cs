@@ -33,7 +33,6 @@ namespace Server.Models
         [DataMember]
         public virtual City City { get => _City; set => _City = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Person() { }
         public Person (string firstName, string lastName, Gender gender, Salutation salutation,
                        string streetName, City city)

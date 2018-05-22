@@ -21,7 +21,6 @@ namespace Server.Models
         [DataMember]
         public virtual Status Status { get => _Status; set => _Status = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Doctor() { }
         public Doctor (Person person, Status status)
         {

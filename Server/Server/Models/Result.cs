@@ -27,7 +27,6 @@ namespace Server.Models
         [DataMember]
         public bool Infected { get => _Infected; set => _Infected = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Result() { }
         public Result (string name, string description, Strain strain, bool infected)
         {

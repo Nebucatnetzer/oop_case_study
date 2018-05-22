@@ -27,7 +27,6 @@ namespace Server.Models
         [DataMember]
         public virtual Result Result { get => _Result; set => _Result = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Exam() { }
         public Exam (Doctor doctor, Person patient, Result result)
         {
