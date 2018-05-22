@@ -19,7 +19,7 @@ namespace Server.Models
         [DataMember]
         public Person Person { get => _Person; set => _Person = value; }
         [DataMember]
-        public Status Status { get => _Status; set => _Status = value; }
+        public virtual Status Status { get => _Status; set => _Status = value; }
 
         [Obsolete("Only needed for serialization and materialization", true)]
         public Doctor() { }

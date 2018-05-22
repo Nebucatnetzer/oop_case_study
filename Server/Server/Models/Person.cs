@@ -25,13 +25,13 @@ namespace Server.Models
         [DataMember]
         public string LastName { get => _LastName; set => _LastName = value; }
         [DataMember]
-        public Gender Gender { get => _Gender; set => _Gender = value; }
+        public virtual Gender Gender { get => _Gender; set => _Gender = value; }
         [DataMember]
-        public Salutation Salutation { get => _Salutation; set => _Salutation = value; }
+        public virtual Salutation Salutation { get => _Salutation; set => _Salutation = value; }
         [DataMember]
         public string StreetName { get => _StreetName; set => _StreetName = value; }
         [DataMember]
-        public City City { get => _City; set => _City = value; }
+        public virtual City City { get => _City; set => _City = value; }
 
         [Obsolete("Only needed for serialization and materialization", true)]
         public Person() { }
