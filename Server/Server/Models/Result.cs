@@ -10,14 +10,14 @@ namespace Server.Models
     [DataContract]
     public class Result
     {
-        private int _ResultId;
+        private int _ResultID;
         private string _Name;
         private string _Description;
         private Strain _Strain;
         private bool _Infected;
 
         [DataMember]
-        public int ResultId { get => _ResultId; set => _ResultId = value; }
+        public int ResultID { get => _ResultID; set => _ResultID = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
         [DataMember]

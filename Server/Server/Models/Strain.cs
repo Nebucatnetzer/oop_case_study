@@ -10,11 +10,11 @@ namespace Server.Models
     [DataContract]
     public class Strain
     {
-        private int _StrainId;
+        private int _StrainID;
         private string _Name;
 
         [DataMember]
-        public int StrainId { get => _StrainId; set => _StrainId = value; }
+        public int StrainID { get => _StrainID; set => _StrainID = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
 

@@ -10,7 +10,7 @@ namespace Server.Models
     [DataContract]
     public class Person
     {
-        private int _PersonId;
+        private int _PersonID;
         private string _FirstName;
         private string _LastName;
         private Gender _Gender;
@@ -19,7 +19,7 @@ namespace Server.Models
         private City _City;
 
         [DataMember]
-        public int PersonId { get => _PersonId; set => _PersonId = value; }
+        public int PersonID { get => _PersonID; set => _PersonID = value; }
         [DataMember]
         public string FirstName { get => _FirstName; set => _FirstName = value; }
         [DataMember]

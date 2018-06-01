@@ -10,11 +10,11 @@ namespace Server.Models
     [DataContract]
     public class Status
     {
-        private int _StatusId;
+        private int _StatusID;
         private string _Name;
 
         [DataMember]
-        public int StatusId { get => _StatusId; set => _StatusId = value; }
+        public int StatusID { get => _StatusID; set => _StatusID = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
 
