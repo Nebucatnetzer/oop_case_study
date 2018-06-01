@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class CountryDB
     {
-        public List<Country> GetAllCountrys()
+        public List<Country> GetAllCountries()
         {
             using (Context ctx = new Context())
             {
