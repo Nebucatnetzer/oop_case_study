@@ -99,6 +99,7 @@
     <Compile Include="DB\PersonDB.cs" />
     <Compile Include="DB\ResultDB.cs" />
     <Compile Include="DB\SalutationDB.cs" />
+    <Compile Include="Helper\EntitiesContextInitializer.cs" />
     <Compile Include="DB\StatusDB.cs" />
     <Compile Include="DB\StrainDB.cs" />
     <Compile Include="Global.asax.cs">

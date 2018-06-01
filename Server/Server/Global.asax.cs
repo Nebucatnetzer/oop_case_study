@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using Server.Helper;
+using Server.Models;
+using Server.DB;
 
 namespace Server
 {
@@ -11,6 +15,12 @@ namespace Server
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Database.SetInitializer(new EntitiesContextInitializer());
+            // Workaround to get the DB filled at first run
+            SalutationDB salutations = new SalutationDB();
+            List<Salutation> salutationList = new List<Salutation>();
+            salutationList = salutations.GetAllSalutations();
+            // End of workaround
         }
     }
 }
