@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8000/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Server.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_WritePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePatient" />
+  </wsdl:message>
+  <wsdl:message name="IService_WritePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteExam_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteExam" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteExam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteExamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteResult" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCity" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGenders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenders" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGenders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSalutations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalutations" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSalutations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalutationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStrains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStrains" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStrains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStrainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDoctors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctors" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDoctors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="WritePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WritePatient" message="tns:IService_WritePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WritePatientResponse" message="tns:IService_WritePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteExam" message="tns:IService_WriteExam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteExamResponse" message="tns:IService_WriteExam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteResult" message="tns:IService_WriteResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteResultResponse" message="tns:IService_WriteResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteCity" message="tns:IService_WriteCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteCityResponse" message="tns:IService_WriteCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteCountry" message="tns:IService_WriteCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteCountryResponse" message="tns:IService_WriteCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGenders" message="tns:IService_GetGenders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGendersResponse" message="tns:IService_GetGenders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalutations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSalutations" message="tns:IService_GetSalutations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSalutationsResponse" message="tns:IService_GetSalutations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrains">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetStrains" message="tns:IService_GetStrains_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetStrainsResponse" message="tns:IService_GetStrains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDoctors" message="tns:IService_GetDoctors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDoctorsResponse" message="tns:IService_GetDoctors_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WritePatient">
+      <soap:operation soapAction="http://tempuri.org/IService/WritePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExam">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteExam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteResult">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteCity">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteCountry">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenders">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGenders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalutations">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSalutations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrains">
+      <soap:operation soapAction="http://tempuri.org/IService/GetStrains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctors">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:8000/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
