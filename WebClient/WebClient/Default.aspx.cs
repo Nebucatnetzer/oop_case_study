@@ -14,7 +14,7 @@ namespace WebClient
 
         // Verwenden Sie die client-Variable, um Vorgänge für den Dienst aufzurufen.
 
-        
+        WebClient.ServiceReferenceEhec.Person p = new Person();
 
 
 
@@ -25,14 +25,11 @@ namespace WebClient
 
         protected void btnSubmitPerson_Click(object sender, EventArgs e)
         {
-
-            WebClient.ServiceReferenceEhec.Person p = new WebClient.ServiceReferenceEhec.Person();
-
-            //p.City.CityId = Convert.ToInt32(txtCity.Text);
+            p.City.CityId = Convert.ToInt32(txtCity.Text);
             p.FirstName = Convert.ToString(txtFirstName.Text);
             p.LastName = Convert.ToString(txtLastName.Text);
-            //p.Salutation.SalutationId = Convert.ToInt32(txtSalutation.Text);
-            //p.Gender.GenderId = Convert.ToInt32(txtGender.Text);
+            p.Salutation.SalutationId = Convert.ToInt32(txtSalutation.Text);
+            p.Gender.GenderId = Convert.ToInt32(txtGender.Text);
             p.StreetName = Convert.ToString(txtStreetName.Text);
 
             client.WritePatient(p);
