@@ -13,7 +13,6 @@ namespace Server.Helper
         private static List<Doctor> Doctors = new List<Doctor>();
         private static List<Country> Countries = new List<Country>();
         private static List<City> Cities = new List<City>();
-        private static List<Status> Statuses = new List<Status>();
         private static Random Rnd = new Random();
 
         private static List<string> SalutationList = new List<string>(new string[]
@@ -44,10 +43,6 @@ namespace Server.Helper
         {
             "Müller", "Meier", "Muster", "Bucher", "Schmidt", "Fink", "Steuri",
             "Meister", "Schär", "Eberhard", "Zingg", "Howald", "Aebi", "Feldmann"
-        });
-        private static List<string> StatusList = new List<string>(new string[]
-        {
-            "Regionalarzt", "Kantonsarzt"
         });
         public static List<Salutation> CreateSalutations()
         {
@@ -85,14 +80,6 @@ namespace Server.Helper
             }
             return Cities;
         }
-        public static List<Status> CreateStatuses()
-        {
-            foreach (var s in StatusList)
-            {
-                Statuses.Add(new Status(s));
-            }
-            return Statuses;
-        }
         public static List<Doctor> CreateDoctors()
         {
             int Counter = Cities.Count();
@@ -101,14 +88,13 @@ namespace Server.Helper
                 for (int j = 0; j < 3; j++)
                 {
                     City PersonCity = Cities[i];
-                    Status DoctorStatus = Statuses[0];
                     String Streetname = "Musterstrasse " + Rnd.Next(1, 20).ToString();
 
                     Doctor doctor = new Doctor(
                         FirstNames[Rnd.Next(1, FirstNames.Count())],
                         LastNames[Rnd.Next(1, LastNames.Count())],
                         Genders[0],
-                        Salutations[0], Streetname, PersonCity, DoctorStatus);
+                        Salutations[0], Streetname, PersonCity);
                     Doctors.Add(doctor);
                 }
             }

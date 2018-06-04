@@ -15,7 +15,6 @@ namespace Server.Helper
             var salutations = GenerateData.CreateSalutations();
             var genders = GenerateData.CreateGenders();
             var countries = GenerateData.CreateCountries();
-            var statuses = GenerateData.CreateStatuses();
             var cities = GenerateData.CreateCities();
             var doctors = GenerateData.CreateDoctors();
 
@@ -30,10 +29,6 @@ namespace Server.Helper
             foreach (var c in countries)
             {
                 context.Countries.Add(c);
-            }
-            foreach (var s in statuses)
-            {
-                context.Status.Add(s);
             }
             foreach (var c in cities)
             {
