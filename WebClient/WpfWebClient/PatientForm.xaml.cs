@@ -26,7 +26,16 @@ namespace WpfWebClient
             InitializeComponent();
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-           
+            Person p = new Person();
+
+            
+
+
+            client.WritePatient(p);
+
+
+            // Client Verbindung schliessen
+            client.Close();
         }
     }
 }

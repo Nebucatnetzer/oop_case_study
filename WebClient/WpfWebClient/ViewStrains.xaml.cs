@@ -18,11 +18,8 @@ namespace WpfWebClient
     /// <summary>
     /// Interaction logic for ViewCases.xaml
     /// </summary>
-    public partial class ViewCases : Page
+    public partial class ViewStrains : Page
     {
-        public ViewCases()
-        {
-            InitializeComponent();
-        }
+        public ViewStrains() => InitializeComponent();
     }
 }

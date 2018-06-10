@@ -35,9 +35,9 @@ namespace WpfWebClient
             Main.Content = new ViewDoctors();
         }
 
-        private void Button_Click_ViewCases(object sender, RoutedEventArgs e)
+        private void Button_Click_ViewStrains(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ViewCases();
+            Main.Content = new ViewStrains();
         }
 
         private void Button_Click_Home(object sender, RoutedEventArgs e)

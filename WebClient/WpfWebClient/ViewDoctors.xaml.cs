@@ -21,8 +21,14 @@ namespace WpfWebClient
     public partial class ViewDoctors : Page
     {
         public ViewDoctors()
+
         {
             InitializeComponent();
+
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            client.GetDoctors();
+            
         }
     }
 }

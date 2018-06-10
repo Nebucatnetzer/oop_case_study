@@ -17,7 +17,7 @@
             <Button Content="New Case" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_NewCase"/>
             <Button Content="View Doctors" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewDoctors"/>
             <Image Source="/resources/eheclogo.png" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0,1"/>
-            <Button Content="View Cases" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewCases"/>
+            <Button Content="View Strains" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewStrains"/>
         </Grid>
         <Grid Grid.Column="1" HorizontalAlignment="Right" Height="565" VerticalAlignment="Top" Width="593"/>
         <Frame x:Name="Main" HorizontalAlignment="Left" Width="593" Grid.Column="1" NavigationUIVisibility="Hidden"/>

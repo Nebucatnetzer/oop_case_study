@@ -9,7 +9,9 @@
       Title="Home" Width="593" Height="565">
 
     <Grid Width="593" Height="565">
-        <Label Content="Willkommen" HorizontalAlignment="Left" Margin="158,285,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="48" Height="61" Width="272"/>
+        <Label Content="Willkommen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="48" Height="61" Width="272"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" Text="Haben Sie die Applikation zum ersten Mal gestartet? In diesem Fall nutzen Sie die vorhandene Funktion zum erstellen von einigen Patienten." VerticalAlignment="Top" Height="89" Width="573" FontSize="20"/>
+        <Button Content="Generate Patients" HorizontalAlignment="Left" Margin="398,234,0,0" VerticalAlignment="Top" Width="147" Height="59" FontSize="18" Click="Button_Click_GeneratePatients"/>
 
     </Grid>
 </Page>
