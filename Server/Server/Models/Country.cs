@@ -10,11 +10,11 @@ namespace Server.Models
     [DataContract]
     public class Country
     {
-        private int _CountryId;
+        private int _CountryID;
         private string _Name;
 
         [DataMember]
-        public int CountryId { get => _CountryId; set => _CountryId = value; }
+        public int CountryID { get => _CountryID; set => _CountryID = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
 

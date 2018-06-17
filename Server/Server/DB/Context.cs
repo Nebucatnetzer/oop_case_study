@@ -19,6 +19,5 @@ namespace Server.DB
         public DbSet<Salutation> Salutations{ get; set; }
         public DbSet<Strain> Strains { get; set; }
         public DbSet<Gender> Genders { get; set; }
-        public DbSet<Status> Status { get; set; }
     }
 }

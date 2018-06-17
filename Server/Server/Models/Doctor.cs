@@ -10,17 +10,14 @@ namespace Server.Models
     [DataContract]
     public class Doctor : Person
     {
-        private int _DoctorId;
-        private Status _Status;
+        private int _DoctorID;
 
         [DataMember]
-        public int DoctorId { get => _DoctorId; set => _DoctorId = value; }
-        [DataMember]
-        public virtual Status Status { get => _Status; set => _Status = value; }
+        public int DoctorID { get => _DoctorID; set => _DoctorID = value; }
 
         public Doctor() { }
         public Doctor(string firstName, string lastName, Gender gender, Salutation salutation,
-                       string streetName, City city, Status status)
+                       string streetName, City city)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -28,7 +25,6 @@ namespace Server.Models
             this.Salutation = salutation;
             this.StreetName = streetName;
             this.City = city;
-            this.Status = status;
         }
     }
 }
