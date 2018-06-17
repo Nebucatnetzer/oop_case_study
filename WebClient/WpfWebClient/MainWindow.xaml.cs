@@ -44,5 +44,10 @@ namespace WpfWebClient
         {
             Main.Content = new Home();
         }
+
+        private void Main_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

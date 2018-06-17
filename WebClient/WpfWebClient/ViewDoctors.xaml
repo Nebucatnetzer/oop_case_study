@@ -9,6 +9,7 @@
       Title="ViewDoctors" Width="593" Height="565">
 
     <Grid Width="593" Height="565">
-        <Label Content="View Doctors" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="433" FontFamily="Tahoma" FontSize="24" Margin="160,-3,0,0"/>
+        <DataGrid x:Name="DataGridViewDoctors" HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="593"/>
+
     </Grid>
 </Page>

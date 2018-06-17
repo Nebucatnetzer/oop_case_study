@@ -28,7 +28,10 @@ namespace WpfWebClient
 
             Person p = new Person();
 
-            
+            p.FirstName = txtVorname.ToString();
+            p.LastName = txtName.ToString();
+            p.StreetName = txtStrasse.ToString();
+
 
 
             client.WritePatient(p);

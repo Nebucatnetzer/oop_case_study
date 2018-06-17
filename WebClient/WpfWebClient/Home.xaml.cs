@@ -26,26 +26,5 @@ namespace WpfWebClient
             InitializeComponent();
         }
 
-        private void Button_Click_GeneratePatients(object sender, RoutedEventArgs e)
-        {
-
-            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
-            Person p = new Person();
-
-            //p.City = 1;
-            p.FirstName = "Lucas";
-            p.LastName = "Meier";
-            p.StreetName = "Hansestrasse";
-            //p.Salutation = 1;
-            //p.Gender = 1;
-
-
-
-            // Patient an Webservice übermitteln
-            client.WritePatient(p);
-
-            // Client schliessen
-            client.Close();
-        }
     }
 }

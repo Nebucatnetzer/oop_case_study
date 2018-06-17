@@ -36,7 +36,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PersonIdField;
+        private int PersonIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WpfWebClient.ServiceReferenceEHEC.Salutation SalutationField;
@@ -107,14 +107,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PersonId {
+        public int PersonID {
             get {
-                return this.PersonIdField;
+                return this.PersonIDField;
             }
             set {
-                if ((this.PersonIdField.Equals(value) != true)) {
-                    this.PersonIdField = value;
-                    this.RaisePropertyChanged("PersonId");
+                if ((this.PersonIDField.Equals(value) != true)) {
+                    this.PersonIDField = value;
+                    this.RaisePropertyChanged("PersonID");
                 }
             }
         }
@@ -165,7 +165,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CityIdField;
+        private int CityIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WpfWebClient.ServiceReferenceEHEC.Country CountryField;
@@ -187,14 +187,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CityId {
+        public int CityID {
             get {
-                return this.CityIdField;
+                return this.CityIDField;
             }
             set {
-                if ((this.CityIdField.Equals(value) != true)) {
-                    this.CityIdField = value;
-                    this.RaisePropertyChanged("CityId");
+                if ((this.CityIDField.Equals(value) != true)) {
+                    this.CityIDField = value;
+                    this.RaisePropertyChanged("CityID");
                 }
             }
         }
@@ -258,7 +258,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GenderIdField;
+        private int GenderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -274,14 +274,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GenderId {
+        public int GenderID {
             get {
-                return this.GenderIdField;
+                return this.GenderIDField;
             }
             set {
-                if ((this.GenderIdField.Equals(value) != true)) {
-                    this.GenderIdField = value;
-                    this.RaisePropertyChanged("GenderId");
+                if ((this.GenderIDField.Equals(value) != true)) {
+                    this.GenderIDField = value;
+                    this.RaisePropertyChanged("GenderID");
                 }
             }
         }
@@ -322,7 +322,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SalutationIdField;
+        private int SalutationIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -348,14 +348,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SalutationId {
+        public int SalutationID {
             get {
-                return this.SalutationIdField;
+                return this.SalutationIDField;
             }
             set {
-                if ((this.SalutationIdField.Equals(value) != true)) {
-                    this.SalutationIdField = value;
-                    this.RaisePropertyChanged("SalutationId");
+                if ((this.SalutationIDField.Equals(value) != true)) {
+                    this.SalutationIDField = value;
+                    this.RaisePropertyChanged("SalutationID");
                 }
             }
         }
@@ -377,33 +377,17 @@ namespace WpfWebClient.ServiceReferenceEHEC {
     public partial class Doctor : WpfWebClient.ServiceReferenceEHEC.Person {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DoctorIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfWebClient.ServiceReferenceEHEC.Status StatusField;
+        private int DoctorIDField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DoctorId {
+        public int DoctorID {
             get {
-                return this.DoctorIdField;
+                return this.DoctorIDField;
             }
             set {
-                if ((this.DoctorIdField.Equals(value) != true)) {
-                    this.DoctorIdField = value;
-                    this.RaisePropertyChanged("DoctorId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfWebClient.ServiceReferenceEHEC.Status Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
+                if ((this.DoctorIDField.Equals(value) != true)) {
+                    this.DoctorIDField = value;
+                    this.RaisePropertyChanged("DoctorID");
                 }
             }
         }
@@ -419,7 +403,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CountryIdField;
+        private int CountryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -435,14 +419,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CountryId {
+        public int CountryID {
             get {
-                return this.CountryIdField;
+                return this.CountryIDField;
             }
             set {
-                if ((this.CountryIdField.Equals(value) != true)) {
-                    this.CountryIdField = value;
-                    this.RaisePropertyChanged("CountryId");
+                if ((this.CountryIDField.Equals(value) != true)) {
+                    this.CountryIDField = value;
+                    this.RaisePropertyChanged("CountryID");
                 }
             }
         }
@@ -456,67 +440,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
                 if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
-    [System.SerializableAttribute()]
-    public partial class Status : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StatusIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StatusId {
-            get {
-                return this.StatusIdField;
-            }
-            set {
-                if ((this.StatusIdField.Equals(value) != true)) {
-                    this.StatusIdField = value;
-                    this.RaisePropertyChanged("StatusId");
                 }
             }
         }
@@ -547,7 +470,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private WpfWebClient.ServiceReferenceEHEC.Doctor DoctorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ExamIdField;
+        private int ExamIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WpfWebClient.ServiceReferenceEHEC.Person PatientField;
@@ -592,14 +515,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ExamId {
+        public int ExamID {
             get {
-                return this.ExamIdField;
+                return this.ExamIDField;
             }
             set {
-                if ((this.ExamIdField.Equals(value) != true)) {
-                    this.ExamIdField = value;
-                    this.RaisePropertyChanged("ExamId");
+                if ((this.ExamIDField.Equals(value) != true)) {
+                    this.ExamIDField = value;
+                    this.RaisePropertyChanged("ExamID");
                 }
             }
         }
@@ -653,13 +576,10 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool InfectedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ResultIdField;
+        private int ResultIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WpfWebClient.ServiceReferenceEHEC.Strain StrainField;
@@ -688,19 +608,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Infected {
-            get {
-                return this.InfectedField;
-            }
-            set {
-                if ((this.InfectedField.Equals(value) != true)) {
-                    this.InfectedField = value;
-                    this.RaisePropertyChanged("Infected");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
             get {
                 return this.NameField;
@@ -714,14 +621,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ResultId {
+        public int ResultID {
             get {
-                return this.ResultIdField;
+                return this.ResultIDField;
             }
             set {
-                if ((this.ResultIdField.Equals(value) != true)) {
-                    this.ResultIdField = value;
-                    this.RaisePropertyChanged("ResultId");
+                if ((this.ResultIDField.Equals(value) != true)) {
+                    this.ResultIDField = value;
+                    this.RaisePropertyChanged("ResultID");
                 }
             }
         }
@@ -762,7 +669,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StrainIdField;
+        private int StrainIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -788,14 +695,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int StrainId {
+        public int StrainID {
             get {
-                return this.StrainIdField;
+                return this.StrainIDField;
             }
             set {
-                if ((this.StrainIdField.Equals(value) != true)) {
-                    this.StrainIdField = value;
-                    this.RaisePropertyChanged("StrainId");
+                if ((this.StrainIDField.Equals(value) != true)) {
+                    this.StrainIDField = value;
+                    this.RaisePropertyChanged("StrainID");
                 }
             }
         }

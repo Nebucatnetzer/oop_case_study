@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfWebClient.ServiceReferenceEHEC;
 
 namespace WpfWebClient
 {
@@ -27,8 +28,14 @@ namespace WpfWebClient
 
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            client.GetDoctors();
-            
+            //var doctors = client.GetDoctors();
+
+            List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
+
+
+
+            DataGridViewDoctors.ItemsSource = doctorlist;
+
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfWebClient.ServiceReferenceEHEC;
 
 namespace WpfWebClient
 {
@@ -20,6 +21,20 @@ namespace WpfWebClient
     /// </summary>
     public partial class ViewStrains : Page
     {
-        public ViewStrains() => InitializeComponent();
+        public ViewStrains()
+        {
+            InitializeComponent();
+
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            //var doctors = client.GetDoctors();
+
+            //List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetStrains());
+
+
+
+            //DataGridViewStrains.ItemsSource = doctorlist;
+        }
+
     }
 }
