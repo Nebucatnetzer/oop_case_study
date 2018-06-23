@@ -13,7 +13,7 @@ namespace Server.Models
         private int _DoctorID;
 
         [DataMember]
-        public int DoctorId { get => _DoctorId; set => _DoctorId = value; }
+        public int DoctorID { get => _DoctorID; set => _DoctorID = value; }
 
         public Doctor() { }
         public Doctor(string firstName, string lastName, Gender gender, Salutation salutation,
