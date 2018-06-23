@@ -25,13 +25,13 @@ namespace Server.Models
         [DataMember]
         public string LastName { get => _LastName; set => _LastName = value; }
         [DataMember]
-        public virtual Gender Gender { get => _Gender; set => _Gender = value; }
+        public Gender Gender { get => _Gender; set => _Gender = value; }
         [DataMember]
-        public virtual Salutation Salutation { get => _Salutation; set => _Salutation = value; }
+        public Salutation Salutation { get => _Salutation; set => _Salutation = value; }
         [DataMember]
         public string StreetName { get => _StreetName; set => _StreetName = value; }
         [DataMember]
-        public virtual City City { get => _City; set => _City = value; }
+        public City City { get => _City; set => _City = value; }
 
         public Person() { }
         public Person (string firstName, string lastName, Gender gender, Salutation salutation,
