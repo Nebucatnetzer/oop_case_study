@@ -22,7 +22,7 @@ namespace Server.Models
         [DataMember]
         public string Description { get => _Description; set => _Description = value; }
         [DataMember]
-        public virtual Strain Strain { get => _Strain; set => _Strain = value; }
+        public Strain Strain { get => _Strain; set => _Strain = value; }
 
         public Result() { }
         public Result (string name, string description, Strain strain)
