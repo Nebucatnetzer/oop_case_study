@@ -37,6 +37,18 @@ namespace Server
             return dataaccess.GetAllStrains();
         }
 
+        public List<City> GetCities()
+        {
+            CityDB dataaccess = new CityDB();
+            return dataaccess.GetAllCities();
+        }
+
+        public List<Country> GetCountries()
+        {
+            CountryDB dataaccess = new CountryDB();
+            return dataaccess.GetAllCountries();
+        }
+
         public void WriteCity(City city)
         {
             CityDB dataaccess = new CityDB();

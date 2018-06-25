@@ -30,5 +30,9 @@ namespace Server
         List<Strain> GetStrains();
         [OperationContract]
         List<Doctor> GetDoctors();
+        [OperationContract]
+        List<City> GetCities();
+        [OperationContract]
+        List<Country> GetCountries();
     }
 }
