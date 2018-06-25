@@ -23,6 +23,8 @@ namespace Server
         [OperationContract]
         void WriteCountry(Country country);
         [OperationContract]
+        void WriteFoodPlace(FoodPlace foodplace);
+        [OperationContract]
         List<Gender> GetGenders();
         [OperationContract]
         List<Salutation> GetSalutations();
@@ -34,5 +36,7 @@ namespace Server
         List<City> GetCities();
         [OperationContract]
         List<Country> GetCountries();
+        [OperationContract]
+        List<FoodPlace> GetFoodPlaces();
     }
 }

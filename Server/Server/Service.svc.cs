@@ -49,6 +49,12 @@ namespace Server
             return dataaccess.GetAllCountries();
         }
 
+        public List<FoodPlace> GetFoodPlaces()
+        {
+            FoodPlaceDB dataaccess = new FoodPlaceDB();
+            return dataaccess.GetAllFoodPlaces();
+        }
+
         public void WriteCity(City city)
         {
             CityDB dataaccess = new CityDB();
@@ -77,6 +83,12 @@ namespace Server
         {
             ResultDB dataaccess = new ResultDB();
             dataaccess.CreateResult(result);
+        }
+
+        public void WriteFoodPlace(FoodPlace foodplace)
+        {
+            FoodPlaceDB dataaccess = new FoodPlaceDB();
+            dataaccess.CreateFoodPlace(foodplace);
         }
     }
 }

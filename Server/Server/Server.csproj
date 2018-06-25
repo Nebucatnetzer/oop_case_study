@@ -90,6 +90,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\FoodPlaceDB.cs" />
     <Compile Include="DB\CityDB.cs" />
     <Compile Include="DB\Context.cs" />
     <Compile Include="DB\CountryDB.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\FoodPlace.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Result.cs" />
