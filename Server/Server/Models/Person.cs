@@ -17,6 +17,7 @@ namespace Server.Models
         private Salutation _Salutation;
         private string _StreetName;
         private City _City;
+        private ICollection<PatientAtFoodPlace> _PatientAtFoodPlaces;
 
         [DataMember]
         public int PersonID { get => _PersonID; set => _PersonID = value; }
@@ -32,6 +33,12 @@ namespace Server.Models
         public string StreetName { get => _StreetName; set => _StreetName = value; }
         [DataMember]
         public City City { get => _City; set => _City = value; }
+        [DataMember]
+        public ICollection<PatientAtFoodPlace> PatientAtFoodPlaces
+        {
+            get => _PatientAtFoodPlaces;
+            set => _PatientAtFoodPlaces= value;
+        }
 
         public Person() { }
         public Person (string firstName, string lastName, Gender gender, Salutation salutation,

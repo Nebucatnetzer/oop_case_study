@@ -36,5 +36,7 @@ namespace Server
         ICollection<Country> GetCountries();
         [OperationContract]
         ICollection<FoodPlace> GetFoodPlaces();
+        [OperationContract]
+        ICollection<PatientAtFoodPlace> GetRelations();
     }
 }

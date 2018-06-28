@@ -55,6 +55,12 @@ namespace Server
             return dataaccess.GetAllFoodPlaces();
         }
 
+        public ICollection<PatientAtFoodPlace> GetRelations()
+        {
+            PatientAtFoodPlaceDB dataaccess = new PatientAtFoodPlaceDB();
+            return dataaccess.GetAllRelations();
+        }
+
         public void WriteCity(City city)
         {
             CityDB dataaccess = new CityDB();

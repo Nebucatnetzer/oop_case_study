@@ -97,6 +97,7 @@
     <Compile Include="DB\DoctorDB.cs" />
     <Compile Include="DB\ExamDB.cs" />
     <Compile Include="DB\GenderDB.cs" />
+    <Compile Include="DB\PatientAtFoodPlaceDB.cs" />
     <Compile Include="DB\PersonDB.cs" />
     <Compile Include="DB\SalutationDB.cs" />
     <Compile Include="Helper\EntitiesContextInitializer.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\FoodPlace.cs" />
     <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\PatientAtFoodPlace.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Salutation.cs" />
     <Compile Include="Models\Strain.cs" />

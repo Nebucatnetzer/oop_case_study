@@ -20,6 +20,8 @@ namespace Server.DB
         public DbSet<Strain> Strains { get; set; }
         public DbSet<Gender> Genders { get; set; }
         public DbSet<FoodPlace> FoodPlaces { get; set; }
+        public DbSet<PatientAtFoodPlace> PatientAtFoodPlaces { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Salutation>()
@@ -81,6 +83,9 @@ namespace Server.DB
             modelBuilder.Entity<Exam>()
                 .HasRequired(e => e.Strain);
 
+            modelBuilder.Entity<PatientAtFoodPlace>()
+                .HasKey(pf => new { pf.PatientID, pf.FoodPlaceID });
+
             modelBuilder.Entity<Person>()
                 .Property(p => p.FirstName)
                 .IsRequired()
@@ -103,6 +108,11 @@ namespace Server.DB
                 .HasRequired(p => p.City)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Person>()
+                .HasMany<PatientAtFoodPlace>(p => p.PatientAtFoodPlaces)
+                .WithRequired()
+                .HasForeignKey(p => p.PatientID);
 
             modelBuilder.Entity<FoodPlace>()
                 .Property(f => f.Name)
@@ -129,5 +139,11 @@ namespace Server.DB
                 .HasRequired(f => f.City)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<FoodPlace>()
+                .HasMany<PatientAtFoodPlace>(f => f.PatientAtFoodPlaces)
+                .WithRequired()
+                .HasForeignKey(f => f.FoodPlaceID);
+        }
     }
 }

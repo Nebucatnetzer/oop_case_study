@@ -16,8 +16,7 @@ namespace Server.Models
         private string _Streetnumber;
         private string _Name;
         private string _Description;
-        private Person _Patient;
-        private DateTime _Date;
+        private ICollection<PatientAtFoodPlace> _PatientAtFoodPlaces;
 
         [DataMember]
         public int FoodPlaceID { get => _FoodPlaceID; set => _FoodPlaceID = value; }       
@@ -32,22 +31,21 @@ namespace Server.Models
         [DataMember]
         public string Description { get => _Description; set => _Description = value; }
         [DataMember]
-        public Person Patient { get => _Patient; set => _Patient = value; }
-        [DataMember]
-        public DateTime Date { get => _Date; set => _Date = value; }
+        public ICollection<PatientAtFoodPlace> PatientAtFoodPlaces
+        {
+            get => _PatientAtFoodPlaces;
+            set => _PatientAtFoodPlaces= value;
+        }
 
         public FoodPlace() { }
         public FoodPlace(City city, string streetname, string streetnumber,
-                         string name,string description, Person patient,
-                         DateTime date)
+                         string name,string description)
         {
             this.City = city;
             this.Streetname = streetname;
             this.Streetnumber = streetnumber;
             this.Name = name;
             this.Description = description;
-            this.Patient = patient;
-            this.Date = date;
         }
     }
 }
