@@ -18,7 +18,6 @@ namespace Server.Models
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
 
-        [Obsolete("Only needed for serialization and materialization", true)]
         public Country() { }
         public Country (string name)
         {
