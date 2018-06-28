@@ -29,7 +29,6 @@ namespace Server.Models
         public string Streetnumber { get => _Streetnumber; set => _Streetnumber = value; }
         [DataMember]
         public string Name { get => _Name; set => _Name = value; }
-        [Column(TypeName = "ntext")]
         [DataMember]
         public string Description { get => _Description; set => _Description = value; }
         [DataMember]
