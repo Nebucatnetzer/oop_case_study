@@ -13,43 +13,43 @@ namespace Server
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service.svc or Service.svc.cs at the Solution Explorer and start debugging.
     public class Service : IService
     {
-        public List<Doctor> GetDoctors()
+        public ICollection<Doctor>GetDoctors()
         {
             DoctorDB dataaccess = new DoctorDB();
             return dataaccess.GetAllDoctors();
         }
 
-        public List<Gender> GetGenders()
+        public ICollection<Gender> GetGenders()
         {
             GenderDB dataaccess = new GenderDB();
             return dataaccess.GetAllGenders();
         }
 
-        public List<Salutation> GetSalutations()
+        public ICollection<Salutation> GetSalutations()
         {
             SalutationDB dataaccess = new SalutationDB();
             return dataaccess.GetAllSalutations();
         }
 
-        public List<Strain> GetStrains()
+        public ICollection<Strain> GetStrains()
         {
             StrainDB dataaccess = new StrainDB();
             return dataaccess.GetAllStrains();
         }
 
-        public List<City> GetCities()
+        public ICollection<City> GetCities()
         {
             CityDB dataaccess = new CityDB();
             return dataaccess.GetAllCities();
         }
 
-        public List<Country> GetCountries()
+        public ICollection<Country> GetCountries()
         {
             CountryDB dataaccess = new CountryDB();
             return dataaccess.GetAllCountries();
         }
 
-        public List<FoodPlace> GetFoodPlaces()
+        public ICollection<FoodPlace> GetFoodPlaces()
         {
             FoodPlaceDB dataaccess = new FoodPlaceDB();
             return dataaccess.GetAllFoodPlaces();

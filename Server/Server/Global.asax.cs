@@ -18,7 +18,7 @@ namespace Server
             Database.SetInitializer(new EntitiesContextInitializer());
             // Workaround to get the DB filled at first run
             SalutationDB salutations = new SalutationDB();
-            List<Salutation> salutationList = new List<Salutation>();
+            ICollection<Salutation> salutationList = new List<Salutation>();
             salutationList = salutations.GetAllSalutations();
             // End of workaround
         }

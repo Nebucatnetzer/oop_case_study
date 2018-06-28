@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class ExamDB
     {
-        public List<Exam> GetAllExams()
+        public ICollection<Exam> GetAllExams()
         {
             using (Context ctx = new Context())
             {

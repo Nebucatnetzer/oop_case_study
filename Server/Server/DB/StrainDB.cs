@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class StrainDB
     {
-        public List<Strain> GetAllStrains()
+        public ICollection<Strain> GetAllStrains()
         {
             using (Context ctx = new Context())
             {

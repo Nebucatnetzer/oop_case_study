@@ -23,18 +23,18 @@ namespace Server
         [OperationContract]
         void WriteFoodPlace(FoodPlace foodplace);
         [OperationContract]
-        List<Gender> GetGenders();
+        ICollection<Gender> GetGenders();
         [OperationContract]
-        List<Salutation> GetSalutations();
+        ICollection<Salutation> GetSalutations();
         [OperationContract]
-        List<Strain> GetStrains();
+        ICollection<Strain> GetStrains();
         [OperationContract]
-        List<Doctor> GetDoctors();
+        ICollection<Doctor> GetDoctors();
         [OperationContract]
-        List<City> GetCities();
+        ICollection<City> GetCities();
         [OperationContract]
-        List<Country> GetCountries();
+        ICollection<Country> GetCountries();
         [OperationContract]
-        List<FoodPlace> GetFoodPlaces();
+        ICollection<FoodPlace> GetFoodPlaces();
     }
 }

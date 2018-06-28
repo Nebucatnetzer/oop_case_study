@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class PersonDB
     {
-        public List<Person> GetAllPersons()
+        public ICollection<Person> GetAllPersons()
         {
             using (Context ctx = new Context())
             {

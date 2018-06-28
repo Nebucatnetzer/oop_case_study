@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class SalutationDB
     {
-        public List<Salutation> GetAllSalutations()
+        public ICollection<Salutation> GetAllSalutations()
         {
             using (Context ctx = new Context())
             {

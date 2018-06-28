@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class GenderDB
     {
-        public List<Gender> GetAllGenders()
+        public ICollection<Gender> GetAllGenders()
         {
             using (Context ctx = new Context())
             {

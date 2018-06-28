@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class DoctorDB
     {
-        public List<Doctor> GetAllDoctors()
+        public ICollection<Doctor> GetAllDoctors()
         {
             using (Context ctx = new Context())
             {

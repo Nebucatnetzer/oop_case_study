@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class CityDB
     {
-        public List<City> GetAllCities()
+        public ICollection<City> GetAllCities()
         {
             using (Context ctx = new Context())
             {

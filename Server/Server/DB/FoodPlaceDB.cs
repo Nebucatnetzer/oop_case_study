@@ -8,7 +8,7 @@ namespace Server.DB
 {
     public class FoodPlaceDB
     {
-        public List<FoodPlace> GetAllFoodPlaces()
+        public ICollection<FoodPlace> GetAllFoodPlaces()
         {
             using (Context ctx = new Context())
             {
