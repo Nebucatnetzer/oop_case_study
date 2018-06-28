@@ -13,7 +13,6 @@ namespace Server.DB
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Exam> Exams { get; set; }
-        public DbSet<Result> Results { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Salutation> Salutations{ get; set; }

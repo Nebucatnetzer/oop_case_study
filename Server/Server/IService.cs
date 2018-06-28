@@ -17,8 +17,6 @@ namespace Server
         [OperationContract]
         void WriteExam(Exam exam);
         [OperationContract]
-        void WriteResult(Result result);
-        [OperationContract]
         void WriteCity(City city);
         [OperationContract]
         void WriteCountry(Country country);

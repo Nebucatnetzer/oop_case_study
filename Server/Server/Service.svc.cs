@@ -79,12 +79,6 @@ namespace Server
             dataaccess.CreatePerson(person);
         }
 
-        public void WriteResult(Result result)
-        {
-            ResultDB dataaccess = new ResultDB();
-            dataaccess.CreateResult(result);
-        }
-
         public void WriteFoodPlace(FoodPlace foodplace)
         {
             FoodPlaceDB dataaccess = new FoodPlaceDB();

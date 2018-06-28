@@ -14,7 +14,8 @@ namespace Server.Models
         private DateTime _Date;
         private Doctor _Doctor;
         private Person _Patient;
-        private Result _Result;
+        private Strain _Strain;
+        private string _Description;
 
         [DataMember]
         public int ExamID  { get => _ExamID; set => _ExamID = value; }
@@ -25,15 +26,18 @@ namespace Server.Models
         [DataMember]
         public Person Patient { get => _Patient; set => _Patient = value; }
         [DataMember]
-        public Result Result { get => _Result; set => _Result = value; }
+        public string Description { get => _Description; set => _Description = value; }
+        [DataMember]
+        public Strain Strain { get => _Strain; set => _Strain = value; }
 
         public Exam() { }
-        public Exam (Doctor doctor, Person patient, Result result)
+        public Exam (Doctor doctor, Person patient, Strain strain, string description)
         {
             this.Date = DateTime.Now;
             this.Doctor = doctor;
             this.Patient = patient;
-            this.Result = result;
+            this.Strain = strain;
+            this.Description = description;
         }
     }
 }
