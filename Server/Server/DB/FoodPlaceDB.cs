@@ -11,7 +11,11 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.FoodPlaces.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.FoodPlaces
+                    .Include("City")
+                    .Include("PatientAtFoodplaces")
+                    .ToList();
             }
         }
         public bool CreateFoodPlace(FoodPlace foodplace)

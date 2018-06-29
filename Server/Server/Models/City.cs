@@ -17,7 +17,7 @@ namespace Server.Models
         [DataMember]
         public int ZipCode { get => _ZipCode; set => _ZipCode = value; }
         [DataMember]
-        public Country Country { get => _Counry; set => _Counry = value; }
+        public virtual Country Country { get => _Counry; set => _Counry = value; }
 
         public City() { }
         public City (string name, int zipCode, Country country)

@@ -11,7 +11,10 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.Cities.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Cities
+                    .Include("Country")
+                    .ToList();
             }
         }
         public bool CreateCity(City city)

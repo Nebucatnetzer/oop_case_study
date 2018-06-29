@@ -11,7 +11,11 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.PatientAtFoodPlaces.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.PatientAtFoodPlaces
+                    .Include("Patient")
+                    .Include("FoodPlace")
+                    .ToList();
             }
         }
         public bool CreateRelation(PatientAtFoodPlace patientAtFoodPlace)

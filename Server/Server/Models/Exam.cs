@@ -18,13 +18,13 @@ namespace Server.Models
         [DataMember]
         public DateTime Date { get => _Date; set => _Date = value; }
         [DataMember]
-        public Doctor Doctor { get => _Doctor; set => _Doctor = value; }
+        public virtual Doctor Doctor { get => _Doctor; set => _Doctor = value; }
         [DataMember]
-        public Person Patient { get => _Patient; set => _Patient = value; }
+        public virtual Person Patient { get => _Patient; set => _Patient = value; }
         [DataMember]
         public string Description { get => _Description; set => _Description = value; }
         [DataMember]
-        public Strain Strain { get => _Strain; set => _Strain = value; }
+        public virtual Strain Strain { get => _Strain; set => _Strain = value; }
 
         public Exam() { }
         public Exam (Doctor doctor, Person patient, Strain strain, string description)

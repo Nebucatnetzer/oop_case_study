@@ -17,7 +17,7 @@ namespace Server.Models
         [DataMember]
         public int FoodPlaceID { get => _FoodPlaceID; set => _FoodPlaceID = value; }       
         [DataMember]
-        public City City { get => _City; set => _City = value; }
+        public virtual City City { get => _City; set => _City = value; }
         [DataMember]
         public string Streetname { get => _Streetname; set => _Streetname = value; }
         [DataMember]
@@ -27,7 +27,7 @@ namespace Server.Models
         [DataMember]
         public string Description { get => _Description; set => _Description = value; }
         [DataMember]
-        public ICollection<PatientAtFoodPlace> PatientAtFoodPlaces
+        public virtual ICollection<PatientAtFoodPlace> PatientAtFoodPlaces
         {
             get => _PatientAtFoodPlaces;
             set => _PatientAtFoodPlaces= value;

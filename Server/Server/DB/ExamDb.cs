@@ -11,7 +11,12 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.Exams.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Exams
+                    .Include("Patient")
+                    .Include("Doctor")
+                    .Include("Strain")
+                    .ToList();
             }
         }
         public bool CreateExam(Exam exam)

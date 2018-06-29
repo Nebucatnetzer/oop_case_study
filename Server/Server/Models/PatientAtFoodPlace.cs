@@ -14,8 +14,8 @@ namespace Server.Models
         public DateTime VistingDate { get; set; }
 
         [DataMember]
-        public Person Person { get; set; }
+        public virtual Person Patient { get; set; }
         [DataMember]
-        public FoodPlace FoodPlace { get; set; }
+        public virtual FoodPlace FoodPlace { get; set; }
     }
 }

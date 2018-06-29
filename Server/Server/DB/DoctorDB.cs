@@ -11,7 +11,12 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.Doctors.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Doctors
+                    .Include("Gender")
+                    .Include("City")
+                    .Include("Salutation")
+                    .ToList();
             }
         }
         public bool CreateDoctor(Doctor doctor)

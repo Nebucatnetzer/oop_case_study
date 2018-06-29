@@ -11,7 +11,13 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-                return ctx.Persons.ToList();
+
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Persons
+                    .Include("Gender")
+                    .Include("City")
+                    .Include("Salutation")
+                    .ToList();
             }
         }
         public bool CreatePerson(Person person)
