@@ -45,6 +45,11 @@ namespace WpfWebClient
             Main.Content = new Home();
         }
 
+        private void Button_Click_AddFoodplace(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddFoodplace();
+        }
+
         private void Main_Navigated(object sender, NavigationEventArgs e)
         {
 

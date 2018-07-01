@@ -36,6 +36,9 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] PatientAtFoodPlacesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PersonIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -43,6 +46,9 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StreetNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetNumberField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -107,6 +113,19 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] PatientAtFoodPlaces {
+            get {
+                return this.PatientAtFoodPlacesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientAtFoodPlacesField, value) != true)) {
+                    this.PatientAtFoodPlacesField = value;
+                    this.RaisePropertyChanged("PatientAtFoodPlaces");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int PersonID {
             get {
                 return this.PersonIDField;
@@ -141,6 +160,19 @@ namespace WpfWebClient.ServiceReferenceEHEC {
                 if ((object.ReferenceEquals(this.StreetNameField, value) != true)) {
                     this.StreetNameField = value;
                     this.RaisePropertyChanged("StreetName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StreetNumber {
+            get {
+                return this.StreetNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetNumberField, value) != true)) {
+                    this.StreetNumberField = value;
+                    this.RaisePropertyChanged("StreetNumber");
                 }
             }
         }
@@ -395,6 +427,115 @@ namespace WpfWebClient.ServiceReferenceEHEC {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PatientAtFoodPlace", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
+    [System.SerializableAttribute()]
+    public partial class PatientAtFoodPlace : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfWebClient.ServiceReferenceEHEC.FoodPlace FoodPlaceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FoodPlaceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfWebClient.ServiceReferenceEHEC.Person PatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatientIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime VistingDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfWebClient.ServiceReferenceEHEC.FoodPlace FoodPlace {
+            get {
+                return this.FoodPlaceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FoodPlaceField, value) != true)) {
+                    this.FoodPlaceField = value;
+                    this.RaisePropertyChanged("FoodPlace");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FoodPlaceID {
+            get {
+                return this.FoodPlaceIDField;
+            }
+            set {
+                if ((this.FoodPlaceIDField.Equals(value) != true)) {
+                    this.FoodPlaceIDField = value;
+                    this.RaisePropertyChanged("FoodPlaceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfWebClient.ServiceReferenceEHEC.Person Patient {
+            get {
+                return this.PatientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
+                    this.PatientField = value;
+                    this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PatientID {
+            get {
+                return this.PatientIDField;
+            }
+            set {
+                if ((this.PatientIDField.Equals(value) != true)) {
+                    this.PatientIDField = value;
+                    this.RaisePropertyChanged("PatientID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime VistingDate {
+            get {
+                return this.VistingDateField;
+            }
+            set {
+                if ((this.VistingDateField.Equals(value) != true)) {
+                    this.VistingDateField = value;
+                    this.RaisePropertyChanged("VistingDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Country", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
     [System.SerializableAttribute()]
     public partial class Country : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -456,6 +597,147 @@ namespace WpfWebClient.ServiceReferenceEHEC {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FoodPlace", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
+    [System.SerializableAttribute()]
+    public partial class FoodPlace : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfWebClient.ServiceReferenceEHEC.City CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FoodPlaceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] PatientAtFoodPlacesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetnumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfWebClient.ServiceReferenceEHEC.City City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FoodPlaceID {
+            get {
+                return this.FoodPlaceIDField;
+            }
+            set {
+                if ((this.FoodPlaceIDField.Equals(value) != true)) {
+                    this.FoodPlaceIDField = value;
+                    this.RaisePropertyChanged("FoodPlaceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] PatientAtFoodPlaces {
+            get {
+                return this.PatientAtFoodPlacesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientAtFoodPlacesField, value) != true)) {
+                    this.PatientAtFoodPlacesField = value;
+                    this.RaisePropertyChanged("PatientAtFoodPlaces");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Streetname {
+            get {
+                return this.StreetnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetnameField, value) != true)) {
+                    this.StreetnameField = value;
+                    this.RaisePropertyChanged("Streetname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Streetnumber {
+            get {
+                return this.StreetnumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetnumberField, value) != true)) {
+                    this.StreetnumberField = value;
+                    this.RaisePropertyChanged("Streetnumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Exam", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
     [System.SerializableAttribute()]
     public partial class Exam : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -467,6 +749,9 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WpfWebClient.ServiceReferenceEHEC.Doctor DoctorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -476,7 +761,7 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private WpfWebClient.ServiceReferenceEHEC.Person PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfWebClient.ServiceReferenceEHEC.Result ResultField;
+        private WpfWebClient.ServiceReferenceEHEC.Strain StrainField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -497,6 +782,19 @@ namespace WpfWebClient.ServiceReferenceEHEC {
                 if ((this.DateField.Equals(value) != true)) {
                     this.DateField = value;
                     this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
@@ -536,99 +834,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
                 if ((object.ReferenceEquals(this.PatientField, value) != true)) {
                     this.PatientField = value;
                     this.RaisePropertyChanged("Patient");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WpfWebClient.ServiceReferenceEHEC.Result Result {
-            get {
-                return this.ResultField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ResultField, value) != true)) {
-                    this.ResultField = value;
-                    this.RaisePropertyChanged("Result");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Result", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
-    [System.SerializableAttribute()]
-    public partial class Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ResultIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WpfWebClient.ServiceReferenceEHEC.Strain StrainField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ResultID {
-            get {
-                return this.ResultIDField;
-            }
-            set {
-                if ((this.ResultIDField.Equals(value) != true)) {
-                    this.ResultIDField = value;
-                    this.RaisePropertyChanged("ResultID");
                 }
             }
         }
@@ -733,12 +938,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteExam", ReplyAction="http://tempuri.org/IService/WriteExamResponse")]
         System.Threading.Tasks.Task WriteExamAsync(WpfWebClient.ServiceReferenceEHEC.Exam exam);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteResult", ReplyAction="http://tempuri.org/IService/WriteResultResponse")]
-        void WriteResult(WpfWebClient.ServiceReferenceEHEC.Result result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteResult", ReplyAction="http://tempuri.org/IService/WriteResultResponse")]
-        System.Threading.Tasks.Task WriteResultAsync(WpfWebClient.ServiceReferenceEHEC.Result result);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteCity", ReplyAction="http://tempuri.org/IService/WriteCityResponse")]
         void WriteCity(WpfWebClient.ServiceReferenceEHEC.City city);
         
@@ -750,6 +949,12 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteCountry", ReplyAction="http://tempuri.org/IService/WriteCountryResponse")]
         System.Threading.Tasks.Task WriteCountryAsync(WpfWebClient.ServiceReferenceEHEC.Country country);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteFoodPlace", ReplyAction="http://tempuri.org/IService/WriteFoodPlaceResponse")]
+        void WriteFoodPlace(WpfWebClient.ServiceReferenceEHEC.FoodPlace foodplace);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteFoodPlace", ReplyAction="http://tempuri.org/IService/WriteFoodPlaceResponse")]
+        System.Threading.Tasks.Task WriteFoodPlaceAsync(WpfWebClient.ServiceReferenceEHEC.FoodPlace foodplace);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGenders", ReplyAction="http://tempuri.org/IService/GetGendersResponse")]
         WpfWebClient.ServiceReferenceEHEC.Gender[] GetGenders();
@@ -774,6 +979,30 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDoctors", ReplyAction="http://tempuri.org/IService/GetDoctorsResponse")]
         System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Doctor[]> GetDoctorsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCities", ReplyAction="http://tempuri.org/IService/GetCitiesResponse")]
+        WpfWebClient.ServiceReferenceEHEC.City[] GetCities();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCities", ReplyAction="http://tempuri.org/IService/GetCitiesResponse")]
+        System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.City[]> GetCitiesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCountries", ReplyAction="http://tempuri.org/IService/GetCountriesResponse")]
+        WpfWebClient.ServiceReferenceEHEC.Country[] GetCountries();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCountries", ReplyAction="http://tempuri.org/IService/GetCountriesResponse")]
+        System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Country[]> GetCountriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFoodPlaces", ReplyAction="http://tempuri.org/IService/GetFoodPlacesResponse")]
+        WpfWebClient.ServiceReferenceEHEC.FoodPlace[] GetFoodPlaces();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFoodPlaces", ReplyAction="http://tempuri.org/IService/GetFoodPlacesResponse")]
+        System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.FoodPlace[]> GetFoodPlacesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetRelations", ReplyAction="http://tempuri.org/IService/GetRelationsResponse")]
+        WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] GetRelations();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetRelations", ReplyAction="http://tempuri.org/IService/GetRelationsResponse")]
+        System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[]> GetRelationsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -819,14 +1048,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
             return base.Channel.WriteExamAsync(exam);
         }
         
-        public void WriteResult(WpfWebClient.ServiceReferenceEHEC.Result result) {
-            base.Channel.WriteResult(result);
-        }
-        
-        public System.Threading.Tasks.Task WriteResultAsync(WpfWebClient.ServiceReferenceEHEC.Result result) {
-            return base.Channel.WriteResultAsync(result);
-        }
-        
         public void WriteCity(WpfWebClient.ServiceReferenceEHEC.City city) {
             base.Channel.WriteCity(city);
         }
@@ -841,6 +1062,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         public System.Threading.Tasks.Task WriteCountryAsync(WpfWebClient.ServiceReferenceEHEC.Country country) {
             return base.Channel.WriteCountryAsync(country);
+        }
+        
+        public void WriteFoodPlace(WpfWebClient.ServiceReferenceEHEC.FoodPlace foodplace) {
+            base.Channel.WriteFoodPlace(foodplace);
+        }
+        
+        public System.Threading.Tasks.Task WriteFoodPlaceAsync(WpfWebClient.ServiceReferenceEHEC.FoodPlace foodplace) {
+            return base.Channel.WriteFoodPlaceAsync(foodplace);
         }
         
         public WpfWebClient.ServiceReferenceEHEC.Gender[] GetGenders() {
@@ -873,6 +1102,38 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Doctor[]> GetDoctorsAsync() {
             return base.Channel.GetDoctorsAsync();
+        }
+        
+        public WpfWebClient.ServiceReferenceEHEC.City[] GetCities() {
+            return base.Channel.GetCities();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.City[]> GetCitiesAsync() {
+            return base.Channel.GetCitiesAsync();
+        }
+        
+        public WpfWebClient.ServiceReferenceEHEC.Country[] GetCountries() {
+            return base.Channel.GetCountries();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Country[]> GetCountriesAsync() {
+            return base.Channel.GetCountriesAsync();
+        }
+        
+        public WpfWebClient.ServiceReferenceEHEC.FoodPlace[] GetFoodPlaces() {
+            return base.Channel.GetFoodPlaces();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.FoodPlace[]> GetFoodPlacesAsync() {
+            return base.Channel.GetFoodPlacesAsync();
+        }
+        
+        public WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[] GetRelations() {
+            return base.Channel.GetRelations();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[]> GetRelationsAsync() {
+            return base.Channel.GetRelationsAsync();
         }
     }
 }

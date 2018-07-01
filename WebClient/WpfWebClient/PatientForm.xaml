@@ -22,13 +22,15 @@
         <Label Content="Vorname" HorizontalAlignment="Left" Margin="10,152,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="104" FontFamily="Tahoma" FontSize="24"/>
         <Label Content="Strasse" HorizontalAlignment="Left" Margin="10,201,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="104" FontFamily="Tahoma" FontSize="24"/>
         <Label Content="Ort" HorizontalAlignment="Left" Margin="10,248,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="75" FontFamily="Tahoma" FontSize="24"/>
-        <Label Content="Arzt" HorizontalAlignment="Left" Margin="10,294,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="75" FontFamily="Tahoma" FontSize="24" RenderTransformOrigin="0.533,1.244"/>
+        <Label Content="Arzt" HorizontalAlignment="Left" Margin="10,351.4,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="75" FontFamily="Tahoma" FontSize="24" RenderTransformOrigin="0.533,1.244"/>
         <Label Content="Anrede" HorizontalAlignment="Left" Margin="10,61,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="104" FontSize="24" FontFamily="Tahoma"/>
-        <TextBox x:Name="txtAnrede" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,61,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="455"/>
         <TextBox x:Name="txtName" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,104,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="455"/>
         <TextBox x:Name="txtVorname" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,152,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="455"/>
         <TextBox x:Name="txtStrasse" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,201,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="455"/>
-        <TextBox x:Name="txtOrt" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0,248,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="455"/>
-        <ListBox x:Name="listBoxArzt" Grid.Column="1" HorizontalAlignment="Left" Height="129" Margin="0,294,0,0" Grid.Row="1" VerticalAlignment="Top" Width="455"/>
+        <ComboBox x:Name="ComboBoxSalutations" HorizontalAlignment="Left" Margin="0.4,61.4,-0.2,0" Grid.Row="1" VerticalAlignment="Top" Width="455" Height="34" Grid.Column="1"/>
+        <ComboBox x:Name="ComboBoxCities" HorizontalAlignment="Left" Margin="0.4,253.4,-0.2,0" Grid.Row="1" VerticalAlignment="Top" Width="455" Grid.Column="1" Height="34"/>
+        <ComboBox x:Name="ComboBoxCountries" HorizontalAlignment="Left" Margin="0.4,297.4,-0.2,0" Grid.Row="1" VerticalAlignment="Top" Width="455" Grid.Column="1" Height="34"/>
+        <ComboBox x:Name="ComboBoxDoctors" HorizontalAlignment="Left" Margin="0.4,351.4,-0.2,0" Grid.Row="1" VerticalAlignment="Top" Width="455" Grid.Column="1" Height="34"/>
+        <Label Content="Land" HorizontalAlignment="Left" Margin="10,297.4,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="75" FontFamily="Tahoma" FontSize="24"/>
     </Grid>
 </Page>

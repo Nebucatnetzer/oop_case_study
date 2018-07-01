@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddFoodplace.xaml.cs">
+      <DependentUpon>AddFoodplace.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -65,6 +68,10 @@
     <Compile Include="ViewDoctors.xaml.cs">
       <DependentUpon>ViewDoctors.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddFoodplace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,10 +139,22 @@
     <None Include="Connected Services\ServiceReferenceEHEC\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.City.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Doctor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.FoodPlace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Gender.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Salutation.datasource">
@@ -172,6 +191,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eheclogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

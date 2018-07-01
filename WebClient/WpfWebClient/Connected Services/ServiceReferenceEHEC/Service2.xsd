@@ -6,9 +6,11 @@
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Gender" nillable="true" type="tns:Gender" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientAtFoodPlaces" nillable="true" type="tns:ArrayOfPatientAtFoodPlace" />
       <xs:element minOccurs="0" name="PersonID" type="xs:int" />
       <xs:element minOccurs="0" name="Salutation" nillable="true" type="tns:Salutation" />
       <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
@@ -35,6 +37,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:complexType name="ArrayOfPatientAtFoodPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientAtFoodPlace" nillable="true" type="tns:PatientAtFoodPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientAtFoodPlace" nillable="true" type="tns:ArrayOfPatientAtFoodPlace" />
+  <xs:complexType name="PatientAtFoodPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FoodPlace" nillable="true" type="tns:FoodPlace" />
+      <xs:element minOccurs="0" name="FoodPlaceID" type="xs:int" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="PatientID" type="xs:int" />
+      <xs:element minOccurs="0" name="VistingDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientAtFoodPlace" nillable="true" type="tns:PatientAtFoodPlace" />
+  <xs:complexType name="FoodPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoodPlaceID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientAtFoodPlaces" nillable="true" type="tns:ArrayOfPatientAtFoodPlace" />
+      <xs:element minOccurs="0" name="Streetname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Streetnumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FoodPlace" nillable="true" type="tns:FoodPlace" />
   <xs:complexType name="Salutation">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -45,10 +75,11 @@
   <xs:complexType name="Exam">
     <xs:sequence>
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Doctor" nillable="true" type="tns:Doctor" />
       <xs:element minOccurs="0" name="ExamID" type="xs:int" />
       <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Person" />
-      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:Result" />
+      <xs:element minOccurs="0" name="Strain" nillable="true" type="tns:Strain" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Exam" nillable="true" type="tns:Exam" />
@@ -62,15 +93,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
-  <xs:complexType name="Result">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ResultID" type="xs:int" />
-      <xs:element minOccurs="0" name="Strain" nillable="true" type="tns:Strain" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Result" nillable="true" type="tns:Result" />
   <xs:complexType name="Strain">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -102,4 +124,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDoctor" nillable="true" type="tns:ArrayOfDoctor" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="ArrayOfFoodPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FoodPlace" nillable="true" type="tns:FoodPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFoodPlace" nillable="true" type="tns:ArrayOfFoodPlace" />
 </xs:schema>

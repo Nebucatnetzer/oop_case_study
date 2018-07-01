@@ -19,12 +19,6 @@
   <wsdl:message name="IService_WriteExam_OutputMessage">
     <wsdl:part name="parameters" element="tns:WriteExamResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_WriteResult_InputMessage">
-    <wsdl:part name="parameters" element="tns:WriteResult" />
-  </wsdl:message>
-  <wsdl:message name="IService_WriteResult_OutputMessage">
-    <wsdl:part name="parameters" element="tns:WriteResultResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_WriteCity_InputMessage">
     <wsdl:part name="parameters" element="tns:WriteCity" />
   </wsdl:message>
@@ -36,6 +30,12 @@
   </wsdl:message>
   <wsdl:message name="IService_WriteCountry_OutputMessage">
     <wsdl:part name="parameters" element="tns:WriteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteFoodPlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteFoodPlace" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteFoodPlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteFoodPlaceResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetGenders_InputMessage">
     <wsdl:part name="parameters" element="tns:GetGenders" />
@@ -61,6 +61,30 @@
   <wsdl:message name="IService_GetDoctors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDoctorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFoodPlaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFoodPlaces" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFoodPlaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFoodPlacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelations" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="WritePatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WritePatient" message="tns:IService_WritePatient_InputMessage" />
@@ -70,10 +94,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteExam" message="tns:IService_WriteExam_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteExamResponse" message="tns:IService_WriteExam_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="WriteResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteResult" message="tns:IService_WriteResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteResultResponse" message="tns:IService_WriteResult_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="WriteCity">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteCity" message="tns:IService_WriteCity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteCityResponse" message="tns:IService_WriteCity_OutputMessage" />
@@ -81,6 +101,10 @@
     <wsdl:operation name="WriteCountry">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteCountry" message="tns:IService_WriteCountry_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteCountryResponse" message="tns:IService_WriteCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteFoodPlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteFoodPlace" message="tns:IService_WriteFoodPlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteFoodPlaceResponse" message="tns:IService_WriteFoodPlace_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetGenders">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGenders" message="tns:IService_GetGenders_InputMessage" />
@@ -97,6 +121,22 @@
     <wsdl:operation name="GetDoctors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDoctors" message="tns:IService_GetDoctors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDoctorsResponse" message="tns:IService_GetDoctors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCities" message="tns:IService_GetCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCitiesResponse" message="tns:IService_GetCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCountries" message="tns:IService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCountriesResponse" message="tns:IService_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFoodPlaces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFoodPlaces" message="tns:IService_GetFoodPlaces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFoodPlacesResponse" message="tns:IService_GetFoodPlaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelations" message="tns:IService_GetRelations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationsResponse" message="tns:IService_GetRelations_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -119,15 +159,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="WriteResult">
-      <soap:operation soapAction="http://tempuri.org/IService/WriteResult" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="WriteCity">
       <soap:operation soapAction="http://tempuri.org/IService/WriteCity" style="document" />
       <wsdl:input>
@@ -139,6 +170,15 @@
     </wsdl:operation>
     <wsdl:operation name="WriteCountry">
       <soap:operation soapAction="http://tempuri.org/IService/WriteCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteFoodPlace">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteFoodPlace" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -175,6 +215,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetDoctors">
       <soap:operation soapAction="http://tempuri.org/IService/GetDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFoodPlaces">
+      <soap:operation soapAction="http://tempuri.org/IService/GetFoodPlaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelations">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelations" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

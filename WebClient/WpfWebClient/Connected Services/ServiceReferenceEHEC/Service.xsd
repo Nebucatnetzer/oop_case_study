@@ -25,22 +25,10 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="WriteResult">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="result" nillable="true" type="q3:Result" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="WriteResultResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="WriteCity">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="city" nillable="true" type="q4:City" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="city" nillable="true" type="q3:City" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,11 +40,23 @@
   <xs:element name="WriteCountry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="country" nillable="true" type="q5:Country" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="country" nillable="true" type="q4:Country" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="WriteCountryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteFoodPlace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="foodplace" nillable="true" type="q5:FoodPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteFoodPlaceResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -106,6 +106,54 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q9:ArrayOfDoctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCitiesResult" nillable="true" type="q10:ArrayOfCity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCountriesResult" nillable="true" type="q11:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFoodPlaces">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFoodPlacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetFoodPlacesResult" nillable="true" type="q12:ArrayOfFoodPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetRelationsResult" nillable="true" type="q13:ArrayOfPatientAtFoodPlace" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -32,10 +32,7 @@ namespace WpfWebClient
 
             List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
 
-
-
             DataGridViewDoctors.ItemsSource = doctorlist;
-
         }
     }
 }

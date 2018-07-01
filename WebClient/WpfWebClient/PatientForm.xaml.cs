@@ -25,20 +25,40 @@ namespace WpfWebClient
         {
             InitializeComponent();
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+           
 
-            Person p = new Person();
+            //Retrieve all salutations and save them into "salutationlist"
+            List<WpfWebClient.ServiceReferenceEHEC.Salutation> salutationlist = new List<ServiceReferenceEHEC.Salutation>(client.GetSalutations());
 
-            p.FirstName = txtVorname.ToString();
-            p.LastName = txtName.ToString();
-            p.StreetName = txtStrasse.ToString();
+            //Display all salutations with name in Combobox
+            ComboBoxSalutations.ItemsSource = salutationlist;
+            ComboBoxSalutations.DisplayMemberPath = "Name";
+
+            //Retrieve all cities and save them into "citylist"
+            List<WpfWebClient.ServiceReferenceEHEC.City> citylist = new List<ServiceReferenceEHEC.City>(client.GetCities());
+
+            //Display all cities with name in Combobox
+            ComboBoxCities.ItemsSource = citylist;
+            ComboBoxCities.DisplayMemberPath = "Name";
+
+            //Retrieve all salutations and save them into "countrylist"
+            List<WpfWebClient.ServiceReferenceEHEC.Country> countrylist = new List<ServiceReferenceEHEC.Country>(client.GetCountries());
+
+            //Display all countries with name in Combobox
+            ComboBoxCountries.ItemsSource = countrylist;
+            ComboBoxCountries.DisplayMemberPath = "Name";
+
+            //Retrieve all doctors and save them into "doctorlist"
+            List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
+            
+
+            //Display all doctors with name in Combobox
+            ComboBoxDoctors.ItemsSource = doctorlist;
+            ComboBoxDoctors.DisplayMemberPath = "FirstName";
 
 
 
-            client.WritePatient(p);
 
-
-            // Client Verbindung schliessen
-            client.Close();
         }
     }
 }
