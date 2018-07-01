@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.Helper
@@ -33,6 +32,16 @@ namespace Server.Helper
             "Zürich", "Genf", "Hamburg", "Berlin", "München", "Main", "Wien",
             "Entenhausen", "Altena", "Erlangen", "Güsten", "Heubach", "Langendorf",
             "Münster", "Wiesbaden"
+        });
+        private static List<string> CityFirstPart = new List<string>(new string[]
+        {
+            "Burg", "Gross", "Klein", "Ober", "Unter", "Riedt", "Enten", "Lang", "Kurz", "Wies",
+            "Alt", "Arn", "Bleich", "Bad", "Berg", "Rhein", "Mühl"
+        });
+        private static List<string> CitySecondPart = new List<string>(new string[]
+        {
+            "dorf", "thal", "ikon", "hausen", "langen", "bach", "baden", "felden", "stein", "stadt",
+            "matten", "weier", "wald", "see", "heim", "kirchen"
         });
         private static List<string> FirstNames = new List<string>(new string[]
         {
@@ -70,33 +79,48 @@ namespace Server.Helper
         }
         public static List<City> CreateCities()
         {
-            foreach (var c in CityList)
+            int FirstPartLength = CityFirstPart.Count();
+            int SecondPartLength = CitySecondPart.Count();
+            int Counter = FirstPartLength * SecondPartLength;
+            while (Cities.Count() != Counter)
             {
+                int FirstPart = Rnd.Next(1, FirstPartLength);
+                int SecondPart = Rnd.Next(1, SecondPartLength);
+                string CityName = CityFirstPart[FirstPart] + CitySecondPart[SecondPart];
                 int ZipCode = Rnd.Next(1000, 10000);
                 int CountryID = Rnd.Next(1, CountryList.Count());
                 Country country = Countries[CountryID];
-                City NewCity = new City(c, ZipCode, country); 
-                Cities.Add(NewCity);
+                City NewCity = new City(CityName, ZipCode, country);
+                if (Cities.Any(c => c.ZipCode == NewCity.ZipCode))
+                {
+                    continue;
+                }
+                else
+                {
+                    Cities.Add(NewCity);
+                }
             }
             return Cities;
         }
         public static List<Doctor> CreateDoctors()
         {
-            int Counter = Cities.Count();
+            int Counter = FirstNames.Count() * LastNames.Count();
+            int CitiesAmount = Cities.Count();
+            int FirstNameAmount = FirstNames.Count();
+            int LastNameAmount = LastNames.Count();
             for (int i = 0; i < Counter; i++)
             {
-                for (int j = 0; j < 3; j++)
-                {
-                    City PersonCity = Cities[i];
-                    String Streetname = "Musterstrasse " + Rnd.Next(1, 20).ToString();
+                int RandomCityID = Rnd.Next(1, CitiesAmount);
+                City PersonCity = Cities[RandomCityID];
+                String Streetname = "Musterstrasse ";
+                String StreetNumber = Rnd.Next(1, 20).ToString();
 
-                    Doctor doctor = new Doctor(
-                        FirstNames[Rnd.Next(1, FirstNames.Count())],
-                        LastNames[Rnd.Next(1, LastNames.Count())],
-                        Genders[0],
-                        Salutations[0], Streetname, PersonCity);
-                    Doctors.Add(doctor);
-                }
+                Doctor doctor = new Doctor(
+                    FirstNames[Rnd.Next(1, FirstNameAmount)],
+                    LastNames[Rnd.Next(1, LastNameAmount)],
+                    Genders[0],
+                    Salutations[0], Streetname, StreetNumber, PersonCity);
+                Doctors.Add(doctor);
             }
             return Doctors;
         }

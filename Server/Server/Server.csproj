@@ -90,14 +90,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\FoodPlaceDB.cs" />
     <Compile Include="DB\CityDB.cs" />
     <Compile Include="DB\Context.cs" />
     <Compile Include="DB\CountryDB.cs" />
     <Compile Include="DB\DoctorDB.cs" />
     <Compile Include="DB\ExamDB.cs" />
     <Compile Include="DB\GenderDB.cs" />
+    <Compile Include="DB\PatientAtFoodPlaceDB.cs" />
     <Compile Include="DB\PersonDB.cs" />
-    <Compile Include="DB\ResultDB.cs" />
     <Compile Include="DB\SalutationDB.cs" />
     <Compile Include="Helper\EntitiesContextInitializer.cs" />
     <Compile Include="DB\StrainDB.cs" />
@@ -105,6 +106,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\GenerateData.cs" />
+    <Compile Include="Helper\MappingExtensions.cs" />
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,9 +119,10 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\FoodPlace.cs" />
     <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\PatientAtFoodPlace.cs" />
     <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Salutation.cs" />
     <Compile Include="Models\Strain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

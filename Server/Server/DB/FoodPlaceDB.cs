@@ -1,27 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
-    public class ResultDB
+    public class FoodPlaceDB
     {
-        public List<Result> GetAllResults()
+        public ICollection<FoodPlace> GetAllFoodPlaces()
         {
             using (Context ctx = new Context())
             {
-                return ctx.Results.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.FoodPlaces
+                    .Include("City")
+                    .Include("PatientAtFoodplaces")
+                    .ToList();
             }
         }
-        public bool CreateResult(Result result)
+        public bool CreateFoodPlace(FoodPlace foodplace)
         {
             try
             {
                 using (Context ctx = new Context())
                 {
-                    ctx.Results.Add(result);
+                    ctx.FoodPlaces.Add(foodplace);
                     ctx.SaveChanges();
                 }
                 return true;
@@ -32,14 +35,14 @@ namespace Server.DB
             }
         }
 
-        public bool UpdateResult(Result result)
+        public bool UpdateFoodPlace(FoodPlace foodplace)
         {
             try
             {
                 using (Context ctx = new Context())
                 {
-                    ctx.Results.Attach(result);
-                    ctx.Entry(result).State = System.Data.Entity.EntityState.Modified;
+                    ctx.FoodPlaces.Attach(foodplace);
+                    ctx.Entry(foodplace).State = System.Data.Entity.EntityState.Modified;
                     ctx.SaveChanges();
                 }
                 return true;
@@ -50,14 +53,14 @@ namespace Server.DB
             }
 
         }
-        public bool DeleteResult(Result result)
+        public bool DeleteFoodPlace(FoodPlace foodplace)
         {
             try
             {
                 using (Context ctx = new Context())
                 {
-                    ctx.Results.Attach(result);
-                    ctx.Results.Remove(result);
+                    ctx.FoodPlaces.Attach(foodplace);
+                    ctx.FoodPlaces.Remove(foodplace);
                     ctx.SaveChanges();
                 }
                 return true;

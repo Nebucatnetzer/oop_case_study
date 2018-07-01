@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Data.Entity;
 using Server.Helper;
 using Server.Models;
@@ -18,7 +14,7 @@ namespace Server
             Database.SetInitializer(new EntitiesContextInitializer());
             // Workaround to get the DB filled at first run
             SalutationDB salutations = new SalutationDB();
-            List<Salutation> salutationList = new List<Salutation>();
+            ICollection<Salutation> salutationList = new List<Salutation>();
             salutationList = salutations.GetAllSalutations();
             // End of workaround
         }

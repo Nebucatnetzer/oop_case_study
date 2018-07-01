@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
 using Server.Models;
 
 namespace Server
@@ -17,18 +13,26 @@ namespace Server
         [OperationContract]
         void WriteExam(Exam exam);
         [OperationContract]
-        void WriteResult(Result result);
-        [OperationContract]
         void WriteCity(City city);
         [OperationContract]
         void WriteCountry(Country country);
         [OperationContract]
-        List<Gender> GetGenders();
+        void WriteFoodPlace(FoodPlace foodplace);
         [OperationContract]
-        List<Salutation> GetSalutations();
+        ICollection<Gender> GetGenders();
         [OperationContract]
-        List<Strain> GetStrains();
+        ICollection<Salutation> GetSalutations();
         [OperationContract]
-        List<Doctor> GetDoctors();
+        ICollection<Strain> GetStrains();
+        [OperationContract]
+        ICollection<Doctor> GetDoctors();
+        [OperationContract]
+        ICollection<City> GetCities();
+        [OperationContract]
+        ICollection<Country> GetCountries();
+        [OperationContract]
+        ICollection<FoodPlace> GetFoodPlaces();
+        [OperationContract]
+        ICollection<PatientAtFoodPlace> GetRelations();
     }
 }

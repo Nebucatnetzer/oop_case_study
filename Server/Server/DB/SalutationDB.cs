@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
     public class SalutationDB
     {
-        public List<Salutation> GetAllSalutations()
+        public ICollection<Salutation> GetAllSalutations()
         {
             using (Context ctx = new Context())
             {

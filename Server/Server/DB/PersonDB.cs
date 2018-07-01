@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
     public class PersonDB
     {
-        public List<Person> GetAllPersons()
+        public ICollection<Person> GetAllPersons()
         {
             using (Context ctx = new Context())
             {
-                return ctx.Persons.ToList();
+
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Persons
+                    .Include("Gender")
+                    .Include("City")
+                    .Include("Salutation")
+                    .ToList();
             }
         }
         public bool CreatePerson(Person person)

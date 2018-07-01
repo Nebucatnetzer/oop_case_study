@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
     public class ExamDB
     {
-        public List<Exam> GetAllExams()
+        public ICollection<Exam> GetAllExams()
         {
             using (Context ctx = new Context())
             {
-                return ctx.Exams.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Exams
+                    .Include("Patient")
+                    .Include("Doctor")
+                    .Include("Strain")
+                    .ToList();
             }
         }
         public bool CreateExam(Exam exam)

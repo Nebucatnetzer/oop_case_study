@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Runtime.Serialization;
-using System.ServiceModel;
+﻿using System.Runtime.Serialization;
 
 namespace Server.Models
 {
@@ -22,7 +17,7 @@ namespace Server.Models
         [DataMember]
         public int ZipCode { get => _ZipCode; set => _ZipCode = value; }
         [DataMember]
-        public Country Country { get => _Counry; set => _Counry = value; }
+        public virtual Country Country { get => _Counry; set => _Counry = value; }
 
         public City() { }
         public City (string name, int zipCode, Country country)

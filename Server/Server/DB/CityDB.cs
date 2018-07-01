@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
     public class CityDB
     {
-        public List<City> GetAllCities()
+        public ICollection<City> GetAllCities()
         {
             using (Context ctx = new Context())
             {
-                return ctx.Cities.ToList();
+                ctx.Configuration.ProxyCreationEnabled = false;
+                return ctx.Cities
+                    .Include("Country")
+                    .ToList();
             }
         }
         public bool CreateCity(City city)

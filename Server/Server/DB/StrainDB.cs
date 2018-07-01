@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Server.Models;
 
 namespace Server.DB
 {
     public class StrainDB
     {
-        public List<Strain> GetAllStrains()
+        public ICollection<Strain> GetAllStrains()
         {
             using (Context ctx = new Context())
             {
