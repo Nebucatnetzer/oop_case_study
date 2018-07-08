@@ -97,23 +97,25 @@ namespace Server.Helper
         }
         public static List<Doctor> CreateDoctors()
         {
-            int Counter = FirstNames.Count() * LastNames.Count();
+            int FirstNamesAmount = FirstNames.Count();
+            int LastNamesAmount = LastNames.Count();
             int CitiesAmount = Cities.Count();
-            int FirstNameAmount = FirstNames.Count();
-            int LastNameAmount = LastNames.Count();
-            for (int i = 0; i < Counter; i++)
+            for (int i = 0; i < FirstNamesAmount; i++)
             {
-                int RandomCityID = Rnd.Next(1, CitiesAmount);
-                City PersonCity = Cities[RandomCityID];
-                String Streetname = "Musterstrasse ";
-                String StreetNumber = Rnd.Next(1, 20).ToString();
+                for (int j = 0; j < LastNamesAmount; j++)
+                {
+                    int RandomCityID = Rnd.Next(1, CitiesAmount);
+                    City PersonCity = Cities[RandomCityID];
+                    String Streetname = "Musterstrasse ";
+                    String StreetNumber = Rnd.Next(1, 20).ToString();
 
-                Doctor doctor = new Doctor(
-                    FirstNames[Rnd.Next(1, FirstNameAmount)],
-                    LastNames[Rnd.Next(1, LastNameAmount)],
-                    Genders[0],
-                    Salutations[0], Streetname, StreetNumber, PersonCity);
-                Doctors.Add(doctor);
+                    Doctor doctor = new Doctor(
+                        FirstNames[i],
+                        LastNames[j],
+                        Genders[0],
+                        Salutations[0], Streetname, StreetNumber, PersonCity);
+                    Doctors.Add(doctor);
+                }
             }
             return Doctors;
         }
