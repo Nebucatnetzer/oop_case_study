@@ -26,13 +26,6 @@ namespace Server.Helper
         {
             "Schweiz", "Deutschland", "Österreich"
         });
-        private static List<string> CityList = new List<string>(new string[]
-        {
-            "Herzogenbuchsee", "Langenthal", "Olten", "Bern", "Lyssach",
-            "Zürich", "Genf", "Hamburg", "Berlin", "München", "Main", "Wien",
-            "Entenhausen", "Altena", "Erlangen", "Güsten", "Heubach", "Langendorf",
-            "Münster", "Wiesbaden"
-        });
         private static List<string> CityFirstPart = new List<string>(new string[]
         {
             "Burg", "Gross", "Klein", "Ober", "Unter", "Riedt", "Enten", "Lang", "Kurz", "Wies",
