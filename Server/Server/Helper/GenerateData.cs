@@ -34,7 +34,7 @@ namespace Server.Helper
         private static List<string> CitySecondPart = new List<string>(new string[]
         {
             "dorf", "thal", "ikon", "hausen", "langen", "bach", "baden", "felden", "stein", "stadt",
-            "matten", "weier", "wald", "see", "heim", "kirchen"
+            "matten", "weier", "wald", "see", "heim", "kirchen", "weiden"
         });
         private static List<string> FirstNames = new List<string>(new string[]
         {
