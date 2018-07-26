@@ -10,7 +10,7 @@
     <style type="text/css">
         #mynetwork {
             width: 1500px;
-            height: 850px;
+            height: 800px;
             border: 1px solid lightgray;
             background-color: black
         }
