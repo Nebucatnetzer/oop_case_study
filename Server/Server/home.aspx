@@ -92,7 +92,12 @@ Please be patient and don't refresh the page.</p>
     function openClusters() {
         var newClusters = [];
         for (var i = 0; i < clusters.length; i++) {
+            try {
                 network.openCluster(clusters[i].id);
+            }
+            catch {
+                continue;
+            }
         }
         if (document.getElementById('stabilizeCheckbox').checked === true) {
             network.stabilize();
