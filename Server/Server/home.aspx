@@ -79,7 +79,7 @@ Please be patient and don't refresh the page.</p>
                     clusters.push({ id: 'cluster:' + clusterIndex });
                     return clusterOptions;
                 },
-                clusterNodeProperties: { borderWidth: 3, shape: 'box', font: { size: 30 } }
+                clusterNodeProperties: { borderWidth: 3, shape: 'box', font: { size: 50 } }
             };
             network.clusterByHubsize(undefined, clusterOptionsByData);
         }
