@@ -10,13 +10,24 @@
     <style type="text/css">
         #mynetwork {
             width: 1500px;
-            height: 900px;
+            height: 850px;
             border: 1px solid lightgray;
             background-color: black
+        }
+        #infomessage {
+            font-family: Arial;
+            font-weight:bold
         }
     </style>
 </head>
 <body>
+
+<div id="infomessage">
+<p>If you see an empty rectangle the cluster ist currently loading.<br />
+    Please be patient and don't refresh the page.
+</p>
+</div>
+
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
