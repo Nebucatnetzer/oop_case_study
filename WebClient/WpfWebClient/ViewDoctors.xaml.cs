@@ -28,11 +28,13 @@ namespace WpfWebClient
 
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            //var doctors = client.GetDoctors();
+            //call method GetDoctors and save them to doctorlist
 
             List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
 
             DataGridViewDoctors.ItemsSource = doctorlist;
+
+            client.Close();
         }
     }
 }

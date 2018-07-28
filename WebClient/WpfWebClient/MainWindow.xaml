@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfWebClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="596" Width="800">
+        Title="MainWindow" Height="700" Width="800">
     <Grid Margin="0,0,-6.4,0.4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="199*"/>
@@ -14,12 +14,14 @@
         <Grid HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="200
               " Grid.ColumnSpan="2">
             <Button Content="Home" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_Home"/>
-            <Button Content="New Case" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_NewCase"/>
-            <Button Content="View Doctors" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewDoctors"/>
-            <Button Content="View Strains" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewStrains"/>
-            <Button Content="Add Foodplace" HorizontalAlignment="Left" Margin="10,473,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddFoodplace"/>
+            <Button Content="Add Patient" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_AddPatient"/>
+            <Button Content="View Doctors" HorizontalAlignment="Left" Margin="10,471,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewDoctors"/>
+            <Button Content="View Strains" HorizontalAlignment="Left" Margin="10,542,0,-43" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewStrains"/>
+            <Button Content="Add Foodplace" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddFoodplace"/>
+            <Button Content="Add Exam" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddExam"/>
             <Image HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="200" Source="Images/eheclogo.png"/>
-        </Grid>
+      
+    </Grid>
         <Grid Grid.Column="1" HorizontalAlignment="Right" Height="565" VerticalAlignment="Top" Width="593"/>
         <Frame x:Name="Main" HorizontalAlignment="Left" Width="593" Grid.Column="1" NavigationUIVisibility="Hidden" Navigated="Main_Navigated" Margin="0" UseLayoutRounding="False"/>
     </Grid>

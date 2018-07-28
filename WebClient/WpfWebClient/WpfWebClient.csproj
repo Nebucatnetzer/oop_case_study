@@ -56,8 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddFoodplace.xaml.cs">
-      <DependentUpon>AddFoodplace.xaml</DependentUpon>
+    <Compile Include="ExamForm.xaml.cs">
+      <DependentUpon>ExamForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FoodplaceForm.xaml.cs">
+      <DependentUpon>FoodplaceForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -68,7 +71,11 @@
     <Compile Include="ViewDoctors.xaml.cs">
       <DependentUpon>ViewDoctors.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddFoodplace.xaml">
+    <Page Include="ExamForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoodplaceForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

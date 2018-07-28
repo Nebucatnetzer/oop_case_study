@@ -10,16 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfWebClient.ServiceReferenceEHEC;
 
 namespace WpfWebClient
 {
     /// <summary>
-    /// Interaction logic for AddFoodplace.xaml
+    /// Interaction logic for CaseForm.xaml
     /// </summary>
-    public partial class AddFoodplace : Page
+    public partial class ExamForm : Page
     {
-        public AddFoodplace()
+        public ExamForm()
         {
             InitializeComponent();
         }

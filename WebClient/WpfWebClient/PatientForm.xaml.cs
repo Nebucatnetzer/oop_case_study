@@ -57,6 +57,7 @@ namespace WpfWebClient
             ComboBoxDoctors.DisplayMemberPath = "FirstName";
 
 
+            client.Close();
 
 
         }

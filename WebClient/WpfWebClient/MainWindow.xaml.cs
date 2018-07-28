@@ -25,9 +25,24 @@ namespace WpfWebClient
             InitializeComponent();
         }
 
-        private void Button_Click_NewCase(object sender, RoutedEventArgs e)
+        private void Button_Click_Home(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Home();
+        }
+
+        private void Button_Click_AddPatient(object sender, RoutedEventArgs e)
         {
             Main.Content = new PatientForm();
+        }
+
+        private void Button_Click_AddFoodplace(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new FoodplaceForm();
+        }
+
+        private void Button_Click_AddExam(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ExamForm();
         }
 
         private void Button_Click_ViewDoctors(object sender, RoutedEventArgs e)
@@ -38,16 +53,6 @@ namespace WpfWebClient
         private void Button_Click_ViewStrains(object sender, RoutedEventArgs e)
         {
             Main.Content = new ViewStrains();
-        }
-
-        private void Button_Click_Home(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Home();
-        }
-
-        private void Button_Click_AddFoodplace(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new AddFoodplace();
         }
 
         private void Main_Navigated(object sender, NavigationEventArgs e)
