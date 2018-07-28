@@ -25,5 +25,21 @@ namespace WpfWebClient
         {
             InitializeComponent();
         }
+
+        private void btnAddFoodPlace_Click(object sender, RoutedEventArgs e)
+        {
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            FoodPlace fp = new FoodPlace();
+
+            fp.Name = txtFoodPlaceName.ToString();
+            fp.Streetname = txtFoodPlaceStreetName.ToString();
+            fp.Streetnumber = txtFoodPlaceHouseNumber.ToString();
+            fp.Description = txtFoodPlaceDescription.ToString();
+
+            client.WriteFoodPlace(fp);
+
+            client.Close();
+        }
     }
 }

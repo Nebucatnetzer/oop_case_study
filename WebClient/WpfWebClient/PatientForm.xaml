@@ -18,19 +18,22 @@
             <ColumnDefinition Width="455*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Add new patient" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="433" FontFamily="Tahoma" FontSize="24" Margin="0.4,-3,0,0" Grid.Column="1" Grid.RowSpan="2"/>
-        <Label Content="Surname" Margin="0,66.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
-        <Label Content="Name" Margin="0,114.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
-        <Label Content="Street" Margin="0,163.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
-        <Label Content="City" Margin="0,210.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="39" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
-        <Label Content="Doctors" Margin="0,305.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" RenderTransformOrigin="0.533,1.244" Grid.ColumnSpan="2"/>
+        <Label Content="Surname" Margin="0,115.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="Name" Margin="0,163.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="Street" Margin="0,212.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="City" Margin="0,301.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="39" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
         <Label Content="Salutation" Margin="0,23.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontSize="24" FontFamily="Tahoma" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtSurname" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0.4,66.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433"/>
-        <TextBox x:Name="txtFirstName" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0.4,114.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433"/>
-        <TextBox x:Name="txtStreet" Grid.Column="1" Height="34" Margin="0.4,163.4,21.8,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="34" Margin="137,115.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="34" Margin="137,163.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtStreetName" Height="34" Margin="137,212.4,22.8,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="ComboBoxSalutations" HorizontalAlignment="Left" Margin="0.4,23.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Height="34" Grid.Column="1"/>
-        <ComboBox x:Name="ComboBoxCities" HorizontalAlignment="Left" Margin="0.4,215.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
-        <ComboBox x:Name="ComboBoxCountries" HorizontalAlignment="Left" Margin="0.4,259.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
-        <ComboBox x:Name="ComboBoxDoctors" HorizontalAlignment="Left" Margin="0.4,305.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
-        <Label Content="Country" Margin="0,259.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="41" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="ComboBoxCities" HorizontalAlignment="Left" Margin="0.4,306.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
+        <ComboBox x:Name="ComboBoxCountries" HorizontalAlignment="Left" Margin="0.4,350.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
+        <Label Content="Country" Margin="0,350.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="41" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="Gender" Margin="0,68.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontSize="24" FontFamily="Tahoma" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="ComboBoxGenders" HorizontalAlignment="Left" Margin="0.4,68.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Height="34" Grid.Column="1"/>
+        <Button x:Name="btnAddPatient" Content="ADD PATIENT" HorizontalAlignment="Left" Margin="137,454.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2" Height="34" FontSize="20" Click="btnAddPatient_Click"/>
+        <Label Content="House Nr." Margin="0,258.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtHouseNumber" Height="34" Margin="137,258.4,22.8,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>
