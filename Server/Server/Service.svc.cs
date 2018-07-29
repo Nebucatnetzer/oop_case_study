@@ -91,5 +91,11 @@ namespace Server
             StrainDB dataaccess = new StrainDB();
             dataaccess.CreateStrain(strain);
         }
+
+        public ICollection<Patient> GetPatients()
+        {
+            PatientDB dataaccess = new PatientDB();
+            return dataaccess.GetAllPatients();
+        }
     }
 }
