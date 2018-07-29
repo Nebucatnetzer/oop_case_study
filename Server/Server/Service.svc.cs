@@ -97,5 +97,11 @@ namespace Server
             PatientDB dataaccess = new PatientDB();
             return dataaccess.GetAllPatients();
         }
+
+        public void WriteRelation(PatientAtFoodPlace relation)
+        {
+            PatientAtFoodPlaceDB dataaccess = new PatientAtFoodPlaceDB();
+            dataaccess.CreateRelation(relation);
+        }
     }
 }

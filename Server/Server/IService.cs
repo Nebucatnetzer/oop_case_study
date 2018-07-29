@@ -21,6 +21,8 @@ namespace Server
         [OperationContract]
         void WriteStrain(Strain strain);
         [OperationContract]
+        void WriteRelation(PatientAtFoodPlace relation);
+        [OperationContract]
         ICollection<Gender> GetGenders();
         [OperationContract]
         ICollection<Salutation> GetSalutations();
