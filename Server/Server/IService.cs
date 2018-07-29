@@ -19,6 +19,8 @@ namespace Server
         [OperationContract]
         void WriteFoodPlace(FoodPlace foodplace);
         [OperationContract]
+        void WriteStrain(Strain strain);
+        [OperationContract]
         ICollection<Gender> GetGenders();
         [OperationContract]
         ICollection<Salutation> GetSalutations();
