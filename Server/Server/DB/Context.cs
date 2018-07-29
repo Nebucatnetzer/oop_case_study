@@ -9,7 +9,6 @@ namespace Server.DB
         public Context() : base("EhecDB") { }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Person> Persons { get; set; }
-        public DbSet<Patient> Patients { get; set; }
         public DbSet<Exam> Exams { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }

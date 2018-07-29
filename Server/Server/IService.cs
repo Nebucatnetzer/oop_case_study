@@ -39,6 +39,6 @@ namespace Server
         [OperationContract]
         ICollection<PatientAtFoodPlace> GetRelations();
         [OperationContract]
-        ICollection<Patient> GetPatients();
+        ICollection<Person> GetPersons();
     }
 }

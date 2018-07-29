@@ -92,10 +92,10 @@ namespace Server
             dataaccess.CreateStrain(strain);
         }
 
-        public ICollection<Patient> GetPatients()
+        public ICollection<Person> GetPersons()
         {
-            PatientDB dataaccess = new PatientDB();
-            return dataaccess.GetAllPatients();
+            PersonDB dataaccess = new PersonDB();
+            return dataaccess.GetAllPersons();
         }
 
         public void WriteRelation(PatientAtFoodPlace relation)
