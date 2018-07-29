@@ -28,7 +28,7 @@ namespace Server.Models
             {
                 Node node = new Node
                 {
-                    id = patient.PersonID,
+                    id = patient.PersonID + patient.FirstName,
                     label = patient.FirstName + " " + patient.LastName,
                 };
                 Nodes.Add(node);
@@ -38,7 +38,7 @@ namespace Server.Models
             {
                 Node node = new Node
                 {
-                    id = foodplace.FoodPlaceID,
+                    id = foodplace.FoodPlaceID + foodplace.Name,
                     label = foodplace.Name + ", " + foodplace.City.Name + ", " + foodplace.City.Country.Name,
                 };
                 Nodes.Add(node);
@@ -53,8 +53,8 @@ namespace Server.Models
             {
                 Edge edge = new Edge
                 {
-                    from = relation.FoodPlaceID,
-                    to = relation.PatientID
+                    from = relation.FoodPlaceID + relation.FoodPlace.Name,
+                    to = relation.PatientID + relation.Patient.FirstName
                 };
                 Edges.Add(edge);
             }
