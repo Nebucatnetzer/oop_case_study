@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 namespace Server.Models
 {
     [DataContract]
+    [KnownType(typeof(Doctor))]
     public class Person
     {
         private int _PersonID;

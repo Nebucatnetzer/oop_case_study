@@ -15,6 +15,8 @@ namespace Server.DB
                 return ctx.PatientAtFoodPlaces
                     .Include("Patient")
                     .Include("FoodPlace")
+                    .Include("FoodPlace.City")
+                    .Include("FoodPlace.City.Country")
                     .ToList();
             }
         }

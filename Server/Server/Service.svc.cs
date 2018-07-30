@@ -85,5 +85,23 @@ namespace Server
             FoodPlaceDB dataaccess = new FoodPlaceDB();
             dataaccess.CreateFoodPlace(foodplace);
         }
+
+        public void WriteStrain(Strain strain)
+        {
+            StrainDB dataaccess = new StrainDB();
+            dataaccess.CreateStrain(strain);
+        }
+
+        public ICollection<Person> GetPersons()
+        {
+            PersonDB dataaccess = new PersonDB();
+            return dataaccess.GetAllPersons();
+        }
+
+        public void WriteRelation(PatientAtFoodPlace relation)
+        {
+            PatientAtFoodPlaceDB dataaccess = new PatientAtFoodPlaceDB();
+            dataaccess.CreateRelation(relation);
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Server.Models
 {
     public class Edge
     {
-        public int from { get; set; }
-        public int to { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
     }
 }

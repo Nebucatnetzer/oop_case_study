@@ -1,43 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using Server.DB;
 
 namespace Server.Models
 {
     public class ClusterData
     {
-        private List<Person> Doctors { get; set; }
-        private List<City> Cities { get; set; }
+        private List<Person> Patients { get; set; }
+        private List<FoodPlace> FoodPlaces { get; set; }
+        private List<PatientAtFoodPlace> Relations { get; set; }
         public ClusterData()
         {
-            DoctorDB doctorDB = new DoctorDB();
-            CityDB cityDB = new CityDB();
-            this.Doctors = new List<Person>(doctorDB.GetAllDoctors());
-            this.Cities = new List<City>(cityDB.GetAllCities());
+            Context ctx = new Context();
+            this.Patients = new List<Person>();
+            this.FoodPlaces = new List<FoodPlace>();
+            PatientAtFoodPlaceDB relationsDB = new PatientAtFoodPlaceDB();
+            this.Relations = new List<PatientAtFoodPlace>(relationsDB.GetAllRelations());
+            foreach (var relation in this.Relations)
+            {
+                this.Patients.Add(relation.Patient);
+                this.FoodPlaces.Add(relation.FoodPlace);
+            }
         }
         public List<Node> GenerateNodes()
         {
             List<Node> Nodes = new List<Node>();
-            foreach (var doctor in this.Doctors)
+            foreach (var patient in this.Patients)
             {
                 Node node = new Node
                 {
-                    id = doctor.PersonID,
-                    label = doctor.FirstName + " " + doctor.LastName,
-                    cid = doctor.City.ZipCode
+                    id = patient.PersonID + patient.FirstName,
+                    label = patient.FirstName + " " + patient.LastName,
                 };
                 Nodes.Add(node);
             }
             int counter = 0;
-            foreach (var city in this.Cities)
+            foreach (var foodplace in this.FoodPlaces)
             {
                 Node node = new Node
                 {
-                    id = city.ZipCode,
-                    label = city.Name,
-                    cid = city.ZipCode
+                    id = foodplace.FoodPlaceID + foodplace.Name,
+                    label = foodplace.Name + ", " + foodplace.City.Name + ", " + foodplace.City.Country.Name,
                 };
                 Nodes.Add(node);
                 counter++;
@@ -47,12 +49,12 @@ namespace Server.Models
         public List<Edge> GenerateEdges()
         {
             List<Edge> Edges = new List<Edge>();
-            foreach (var doctor in this.Doctors)
+            foreach (var relation in this.Relations)
             {
                 Edge edge = new Edge
                 {
-                    from = doctor.City.ZipCode,
-                    to = doctor.PersonID
+                    from = relation.FoodPlaceID + relation.FoodPlace.Name,
+                    to = relation.PatientID + relation.Patient.FirstName
                 };
                 Edges.Add(edge);
             }

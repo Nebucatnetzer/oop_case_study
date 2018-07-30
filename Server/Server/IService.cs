@@ -19,6 +19,10 @@ namespace Server
         [OperationContract]
         void WriteFoodPlace(FoodPlace foodplace);
         [OperationContract]
+        void WriteStrain(Strain strain);
+        [OperationContract]
+        void WriteRelation(PatientAtFoodPlace relation);
+        [OperationContract]
         ICollection<Gender> GetGenders();
         [OperationContract]
         ICollection<Salutation> GetSalutations();
@@ -34,5 +38,7 @@ namespace Server
         ICollection<FoodPlace> GetFoodPlaces();
         [OperationContract]
         ICollection<PatientAtFoodPlace> GetRelations();
+        [OperationContract]
+        ICollection<Person> GetPersons();
     }
 }

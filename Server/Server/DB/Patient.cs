@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.Models
 {
-    [Table("Doctors")]
+    [Table("Patients")]
     [DataContract]
-    public class Doctor : Person
+    public class Patient : Person
     {
-        public Doctor() { }
-        public Doctor(string firstName, string lastName, Gender gender, Salutation salutation,
+        public Patient() { }
+        public Patient(string firstName, string lastName, Gender gender, Salutation salutation,
                        string streetName, string streetNumber, City city)
         {
             this.FirstName = firstName;
