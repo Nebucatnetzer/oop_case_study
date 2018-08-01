@@ -37,6 +37,18 @@
   <wsdl:message name="IService_WriteFoodPlace_OutputMessage">
     <wsdl:part name="parameters" element="tns:WriteFoodPlaceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_WriteStrain_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteStrain" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteStrain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteStrainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteRelation_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteRelation" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteRelation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteRelationResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetGenders_InputMessage">
     <wsdl:part name="parameters" element="tns:GetGenders" />
   </wsdl:message>
@@ -85,6 +97,12 @@
   <wsdl:message name="IService_GetRelations_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRelationsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersons" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="WritePatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WritePatient" message="tns:IService_WritePatient_InputMessage" />
@@ -105,6 +123,14 @@
     <wsdl:operation name="WriteFoodPlace">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteFoodPlace" message="tns:IService_WriteFoodPlace_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteFoodPlaceResponse" message="tns:IService_WriteFoodPlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteStrain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteStrain" message="tns:IService_WriteStrain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteStrainResponse" message="tns:IService_WriteStrain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteRelation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteRelation" message="tns:IService_WriteRelation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteRelationResponse" message="tns:IService_WriteRelation_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetGenders">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGenders" message="tns:IService_GetGenders_InputMessage" />
@@ -137,6 +163,10 @@
     <wsdl:operation name="GetRelations">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelations" message="tns:IService_GetRelations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationsResponse" message="tns:IService_GetRelations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPersons" message="tns:IService_GetPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPersonsResponse" message="tns:IService_GetPersons_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -179,6 +209,24 @@
     </wsdl:operation>
     <wsdl:operation name="WriteFoodPlace">
       <soap:operation soapAction="http://tempuri.org/IService/WriteFoodPlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteStrain">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteStrain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteRelation">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteRelation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -251,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRelations">
       <soap:operation soapAction="http://tempuri.org/IService/GetRelations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPersons" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

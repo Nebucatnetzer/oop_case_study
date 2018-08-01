@@ -30,6 +30,8 @@ namespace WpfWebClient
         {
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
+            client.Open();
+
             FoodPlace fp = new FoodPlace();
 
             fp.Name = txtFoodPlaceName.ToString();

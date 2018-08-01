@@ -76,7 +76,7 @@ namespace WpfWebClient
             //p.City = ComboBoxCities.SelectedItem.ToString();
 
             client.WritePatient(p);
-
+            
             client.Close();
            
         }
