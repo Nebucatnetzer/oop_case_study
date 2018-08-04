@@ -50,7 +50,7 @@ namespace Server.Helper
         {
             foreach (var s in SalutationList)
             {
-                Salutations.Add(new Salutation(s)); 
+                Salutations.Add(new Salutation(s));
             }
             return Salutations;
         }
@@ -58,7 +58,7 @@ namespace Server.Helper
         {
             foreach (var g in GenderList)
             {
-                Genders.Add(new Gender(g)); 
+                Genders.Add(new Gender(g));
             }
             return Genders;
         }
@@ -66,7 +66,7 @@ namespace Server.Helper
         {
             foreach (var c in CountryList)
             {
-                Countries.Add(new Country(c)); 
+                Countries.Add(new Country(c));
             }
             return Countries;
         }
