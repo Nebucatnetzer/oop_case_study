@@ -31,8 +31,9 @@ namespace Server.DB
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.Trace.WriteLine(e.Message);
                 return false;
             }
         }
@@ -49,8 +50,9 @@ namespace Server.DB
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.Trace.WriteLine(e.Message);
                 return false;
             }
 
@@ -67,8 +69,9 @@ namespace Server.DB
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Diagnostics.Trace.WriteLine(e.Message);
                 return false;
             }
         }
