@@ -67,13 +67,17 @@ namespace WpfWebClient
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
             Person p = new Person();
-            //p.Salutation = ComboBoxSalutations.SelectedValue;
-            //p.Gender = ComboBoxGenders.SelectedValue;
-            p.LastName = txtLastName.ToString();
-            p.FirstName = txtFirstName.ToString();
-            p.StreetName = txtStreetName.ToString();
-            p.StreetNumber = txtHouseNumber.ToString();
-            //p.City = ComboBoxCities.SelectedItem.ToString();
+
+            //if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
+
+
+            p.Salutation =  (Salutation)ComboBoxSalutations.SelectedValue;
+            p.Gender = (Gender)ComboBoxGenders.SelectedValue;
+            p.LastName = txtLastName.Text;
+            p.FirstName = txtFirstName.Text;
+            p.StreetName = txtStreetName.Text;
+            p.StreetNumber = txtHouseNumber.Text;
+            p.City = (City)ComboBoxCities.SelectedValue;
 
             client.WritePatient(p);
             
