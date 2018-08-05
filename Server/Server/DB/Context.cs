@@ -101,14 +101,9 @@ namespace Server.DB
                 .HasRequired(p => p.Gender);
 
             modelBuilder.Entity<Person>()
-                .HasRequired(p => p.City)
+                .HasRequired(p => p.City)                
                 .WithMany()
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Person>()
-                .HasMany<PatientAtFoodPlace>(p => p.PatientAtFoodPlaces)
-                .WithRequired()
-                .HasForeignKey(p => p.PatientID);
+                .WillCascadeOnDelete(false);      
 
             modelBuilder.Entity<FoodPlace>()
                 .Property(f => f.Name)

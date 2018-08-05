@@ -21,11 +21,27 @@ namespace Server.DB
             }
         }
         public bool CreatePerson(Person person)
-        {
+        {       
+
             try
             {
                 using (Context ctx = new Context())
                 {
+               
+                    var city = ctx.Cities.FirstOrDefault(c => c.CityID == person.City.CityID);
+                    var salutation = ctx.Salutations.FirstOrDefault(c => c.SalutationID == person.Salutation.SalutationID);
+                    var gender = ctx.Genders.FirstOrDefault(c => c.GenderID == person.Gender.GenderID);
+                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == city.Country.CountryID);
+
+                    ctx.Cities.Attach(city);
+                    ctx.Salutations.Attach(salutation);
+                    ctx.Genders.Attach(gender);
+                    ctx.Countries.Attach(country);
+
+                    person.City = city;
+                    person.Salutation = salutation;
+                    person.Gender = gender;
+
                     ctx.Persons.Add(person);
                     ctx.SaveChanges();
                 }
