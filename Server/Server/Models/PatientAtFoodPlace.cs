@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.Models
 {
@@ -11,6 +12,7 @@ namespace Server.Models
         [DataMember]
         public int FoodPlaceID { get; set; }
         [DataMember]
+        [Column(TypeName = "Date")]
         public DateTime VistingDate { get; set; }
 
         [DataMember]
