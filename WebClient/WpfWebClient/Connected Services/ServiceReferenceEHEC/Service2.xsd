@@ -72,6 +72,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Salutation" nillable="true" type="tns:Salutation" />
+  <xs:complexType name="Doctor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Person">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
   <xs:complexType name="Exam">
     <xs:sequence>
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
@@ -83,16 +91,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Exam" nillable="true" type="tns:Exam" />
-  <xs:complexType name="Doctor">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Person">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="DoctorID" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
   <xs:complexType name="Strain">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -142,4 +140,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFoodPlace" nillable="true" type="tns:ArrayOfFoodPlace" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
 </xs:schema>

@@ -61,6 +61,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="WriteStrain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="strain" nillable="true" type="q6:Strain" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteStrainResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="relation" nillable="true" type="q7:PatientAtFoodPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteRelationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetGenders">
     <xs:complexType>
       <xs:sequence />
@@ -69,7 +93,7 @@
   <xs:element name="GetGendersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetGendersResult" nillable="true" type="q6:ArrayOfGender" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetGendersResult" nillable="true" type="q8:ArrayOfGender" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +105,7 @@
   <xs:element name="GetSalutationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetSalutationsResult" nillable="true" type="q7:ArrayOfSalutation" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetSalutationsResult" nillable="true" type="q9:ArrayOfSalutation" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +117,7 @@
   <xs:element name="GetStrainsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetStrainsResult" nillable="true" type="q8:ArrayOfStrain" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetStrainsResult" nillable="true" type="q10:ArrayOfStrain" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -105,7 +129,7 @@
   <xs:element name="GetDoctorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q9:ArrayOfDoctor" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetDoctorsResult" nillable="true" type="q11:ArrayOfDoctor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -117,7 +141,7 @@
   <xs:element name="GetCitiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCitiesResult" nillable="true" type="q10:ArrayOfCity" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCitiesResult" nillable="true" type="q12:ArrayOfCity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +153,7 @@
   <xs:element name="GetCountriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCountriesResult" nillable="true" type="q11:ArrayOfCountry" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetCountriesResult" nillable="true" type="q13:ArrayOfCountry" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -141,7 +165,7 @@
   <xs:element name="GetFoodPlacesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetFoodPlacesResult" nillable="true" type="q12:ArrayOfFoodPlace" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetFoodPlacesResult" nillable="true" type="q14:ArrayOfFoodPlace" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -153,7 +177,19 @@
   <xs:element name="GetRelationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetRelationsResult" nillable="true" type="q13:ArrayOfPatientAtFoodPlace" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetRelationsResult" nillable="true" type="q15:ArrayOfPatientAtFoodPlace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersons">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetPersonsResult" nillable="true" type="q16:ArrayOfPerson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

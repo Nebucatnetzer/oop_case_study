@@ -407,22 +407,6 @@ namespace WpfWebClient.ServiceReferenceEHEC {
     [System.Runtime.Serialization.DataContractAttribute(Name="Doctor", Namespace="http://schemas.datacontract.org/2004/07/Server.Models")]
     [System.SerializableAttribute()]
     public partial class Doctor : WpfWebClient.ServiceReferenceEHEC.Person {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DoctorIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DoctorID {
-            get {
-                return this.DoctorIDField;
-            }
-            set {
-                if ((this.DoctorIDField.Equals(value) != true)) {
-                    this.DoctorIDField = value;
-                    this.RaisePropertyChanged("DoctorID");
-                }
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -956,6 +940,18 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteFoodPlace", ReplyAction="http://tempuri.org/IService/WriteFoodPlaceResponse")]
         System.Threading.Tasks.Task WriteFoodPlaceAsync(WpfWebClient.ServiceReferenceEHEC.FoodPlace foodplace);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteStrain", ReplyAction="http://tempuri.org/IService/WriteStrainResponse")]
+        void WriteStrain(WpfWebClient.ServiceReferenceEHEC.Strain strain);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteStrain", ReplyAction="http://tempuri.org/IService/WriteStrainResponse")]
+        System.Threading.Tasks.Task WriteStrainAsync(WpfWebClient.ServiceReferenceEHEC.Strain strain);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteRelation", ReplyAction="http://tempuri.org/IService/WriteRelationResponse")]
+        void WriteRelation(WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace relation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/WriteRelation", ReplyAction="http://tempuri.org/IService/WriteRelationResponse")]
+        System.Threading.Tasks.Task WriteRelationAsync(WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace relation);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGenders", ReplyAction="http://tempuri.org/IService/GetGendersResponse")]
         WpfWebClient.ServiceReferenceEHEC.Gender[] GetGenders();
         
@@ -1003,6 +999,12 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetRelations", ReplyAction="http://tempuri.org/IService/GetRelationsResponse")]
         System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[]> GetRelationsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersons", ReplyAction="http://tempuri.org/IService/GetPersonsResponse")]
+        WpfWebClient.ServiceReferenceEHEC.Person[] GetPersons();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersons", ReplyAction="http://tempuri.org/IService/GetPersonsResponse")]
+        System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Person[]> GetPersonsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1072,6 +1074,22 @@ namespace WpfWebClient.ServiceReferenceEHEC {
             return base.Channel.WriteFoodPlaceAsync(foodplace);
         }
         
+        public void WriteStrain(WpfWebClient.ServiceReferenceEHEC.Strain strain) {
+            base.Channel.WriteStrain(strain);
+        }
+        
+        public System.Threading.Tasks.Task WriteStrainAsync(WpfWebClient.ServiceReferenceEHEC.Strain strain) {
+            return base.Channel.WriteStrainAsync(strain);
+        }
+        
+        public void WriteRelation(WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace relation) {
+            base.Channel.WriteRelation(relation);
+        }
+        
+        public System.Threading.Tasks.Task WriteRelationAsync(WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace relation) {
+            return base.Channel.WriteRelationAsync(relation);
+        }
+        
         public WpfWebClient.ServiceReferenceEHEC.Gender[] GetGenders() {
             return base.Channel.GetGenders();
         }
@@ -1134,6 +1152,14 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         
         public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace[]> GetRelationsAsync() {
             return base.Channel.GetRelationsAsync();
+        }
+        
+        public WpfWebClient.ServiceReferenceEHEC.Person[] GetPersons() {
+            return base.Channel.GetPersons();
+        }
+        
+        public System.Threading.Tasks.Task<WpfWebClient.ServiceReferenceEHEC.Person[]> GetPersonsAsync() {
+            return base.Channel.GetPersonsAsync();
         }
     }
 }
