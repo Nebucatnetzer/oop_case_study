@@ -105,11 +105,6 @@ namespace Server.DB
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Person>()
-                .HasMany<PatientAtFoodPlace>(p => p.PatientAtFoodPlaces)
-                .WithRequired()
-                .HasForeignKey(p => p.PatientID);
-
             modelBuilder.Entity<FoodPlace>()
                 .Property(f => f.Name)
                 .HasMaxLength(50)
@@ -135,11 +130,6 @@ namespace Server.DB
                 .HasRequired(f => f.City)
                 .WithMany()
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<FoodPlace>()
-                .HasMany<PatientAtFoodPlace>(f => f.PatientAtFoodPlaces)
-                .WithRequired()
-                .HasForeignKey(f => f.FoodPlaceID);
         }
     }
 }
