@@ -58,10 +58,10 @@ namespace WpfWebClient
             Exam exam = new Exam();
 
             exam.Date = dateboxExamDate.SelectedDate.Value;
-            //exam.Doctor = ComboBoxDoctors.SelectedValue.SelectedItem;
-            //exam.Patient = ComboBoxPatients.SelectedValue.SelectedItem;
+            exam.Doctor = (Doctor)ComboBoxDoctors.SelectedValue;
+            exam.Patient = (Person)ComboBoxPatients.SelectedValue;
             exam.Description = txtDescription.ToString();
-            //exam.Strain = ComboBoxStrains.SelectedItem;
+            exam.Strain = (Strain)ComboBoxStrains.SelectedValue;
 
             client.WriteExam(exam);
 
