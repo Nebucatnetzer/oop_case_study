@@ -24,6 +24,11 @@ namespace Server.DB
             {
                 using (Context ctx = new Context())
                 {
+                    var city = ctx.Cities.FirstOrDefault(c => c.CityID == foodplace.City.CityID);
+                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == foodplace.City.Country.CountryID);
+
+                    ctx.Cities.Attach(city);
+                    ctx.Countries.Attach(country);
                     ctx.FoodPlaces.Add(foodplace);
                     ctx.SaveChanges();
                 }

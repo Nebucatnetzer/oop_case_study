@@ -26,6 +26,15 @@ namespace Server.DB
             {
                 using (Context ctx = new Context())
                 {
+                    var city = ctx.Cities.FirstOrDefault(c => c.CityID == person.City.CityID);
+                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == person.City.Country.CountryID);
+                    var salutation = ctx.Salutations.FirstOrDefault(s => s.SalutationID == person.Salutation.SalutationID);
+                    var gender = ctx.Genders.FirstOrDefault(g => g.GenderID == person.Gender.GenderID);
+
+                    ctx.Cities.Attach(city);
+                    ctx.Countries.Attach(country);
+                    ctx.Genders.Attach(gender);
+                    ctx.Salutations.Attach(salutation);
                     ctx.Persons.Add(person);
                     ctx.SaveChanges();
                 }
