@@ -29,6 +29,9 @@ namespace Server.DB
 
                     ctx.Cities.Attach(city);
                     ctx.Countries.Attach(country);
+
+                    foodplace.City = city;
+
                     ctx.FoodPlaces.Add(foodplace);
                     ctx.SaveChanges();
                 }

@@ -47,6 +47,11 @@ namespace Server.DB
                     ctx.Genders.Attach(pGender);
                     ctx.Salutations.Attach(dSalutation);
                     ctx.Salutations.Attach(pSalutation);
+
+                    exam.Doctor = doctor;
+                    exam.Patient = patient;
+                    exam.Strain = strain;
+
                     ctx.Exams.Add(exam);
                     ctx.SaveChanges();
                 }
