@@ -34,10 +34,10 @@ namespace WpfWebClient
 
             FoodPlace fp = new FoodPlace();
 
-            fp.Name = txtFoodPlaceName.ToString();
-            fp.Streetname = txtFoodPlaceStreetName.ToString();
-            fp.Streetnumber = txtFoodPlaceHouseNumber.ToString();
-            fp.Description = txtFoodPlaceDescription.ToString();
+            fp.Name = txtFoodPlaceName.Text;
+            fp.Streetname = txtFoodPlaceStreetName.Text;
+            fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
+            fp.Description = txtFoodPlaceDescription.Text;
 
             client.WriteFoodPlace(fp);
 
