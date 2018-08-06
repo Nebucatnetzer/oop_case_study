@@ -34,6 +34,11 @@ namespace Server.DB
                     ctx.Countries.Attach(country);
                     ctx.Genders.Attach(gender);
                     ctx.Salutations.Attach(salutation);
+
+                    doctor.City = city;
+                    doctor.Salutation = salutation;
+                    doctor.Gender = gender;
+
                     ctx.Doctors.Add(doctor);
                     ctx.SaveChanges();
                 }
