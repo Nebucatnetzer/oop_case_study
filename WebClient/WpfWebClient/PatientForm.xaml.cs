@@ -34,6 +34,13 @@ namespace WpfWebClient
             ComboBoxSalutations.ItemsSource = salutationlist;
             ComboBoxSalutations.DisplayMemberPath = "Name";
 
+            //Retrieve all genders and save them into "genderlist"
+            List<WpfWebClient.ServiceReferenceEHEC.Gender> genderlist = new List<ServiceReferenceEHEC.Gender>(client.GetGenders());
+
+            //Display all genders with name in Combobox
+            ComboBoxGenders.ItemsSource = genderlist;
+            ComboBoxGenders.DisplayMemberPath = "Name";
+
             //Retrieve all cities and save them into "citylist"
             List<WpfWebClient.ServiceReferenceEHEC.City> citylist = new List<ServiceReferenceEHEC.City>(client.GetCities());
 
@@ -48,18 +55,36 @@ namespace WpfWebClient
             ComboBoxCountries.ItemsSource = countrylist;
             ComboBoxCountries.DisplayMemberPath = "Name";
 
-            //Retrieve all doctors and save them into "doctorlist"
-            List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
-            
-
-            //Display all doctors with name in Combobox
-            ComboBoxDoctors.ItemsSource = doctorlist;
-            ComboBoxDoctors.DisplayMemberPath = "FirstName";
-
 
             client.Close();
 
 
+        }
+
+        private void btnAddPatient_Click(object sender, RoutedEventArgs e)
+        {
+
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            Person p = new Person();
+
+            //if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
+            //if (ComboBoxGenders.SelectedValue != null && ComboBoxGenders.SelectedValue is Gender)
+            //if (ComboBoxCities.SelectedValue != null && ComboBoxCities.SelectedValue is City)
+
+            //Pick all selected fields and send object to client
+            p.Salutation =  (Salutation)ComboBoxSalutations.SelectedValue;
+            p.Gender = (Gender)ComboBoxGenders.SelectedValue;
+            p.LastName = txtLastName.Text;
+            p.FirstName = txtFirstName.Text;
+            p.StreetName = txtStreetName.Text;
+            p.StreetNumber = txtHouseNumber.Text;
+            p.City = (City)ComboBoxCities.SelectedValue;
+
+            client.WritePatient(p);
+            
+            client.Close();
+           
         }
     }
 }

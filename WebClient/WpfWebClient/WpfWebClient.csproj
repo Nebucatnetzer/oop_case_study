@@ -164,6 +164,9 @@
     <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.PatientAtFoodPlace.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceEHEC\WpfWebClient.ServiceReferenceEHEC.Salutation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
