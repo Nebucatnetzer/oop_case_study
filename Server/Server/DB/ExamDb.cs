@@ -59,7 +59,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
         }
@@ -78,7 +78,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
 
@@ -97,7 +97,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
         }

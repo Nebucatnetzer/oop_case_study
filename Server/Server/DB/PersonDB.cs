@@ -11,7 +11,6 @@ namespace Server.DB
         {
             using (Context ctx = new Context())
             {
-
                 ctx.Configuration.ProxyCreationEnabled = false;
                 return ctx.Persons
                     .Include("Gender")
@@ -27,14 +26,19 @@ namespace Server.DB
                 using (Context ctx = new Context())
                 {
                     var city = ctx.Cities.FirstOrDefault(c => c.CityID == person.City.CityID);
-                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == person.City.Country.CountryID);
-                    var salutation = ctx.Salutations.FirstOrDefault(s => s.SalutationID == person.Salutation.SalutationID);
-                    var gender = ctx.Genders.FirstOrDefault(g => g.GenderID == person.Gender.GenderID);
+                    var salutation = ctx.Salutations.FirstOrDefault(c => c.SalutationID == person.Salutation.SalutationID);
+                    var gender = ctx.Genders.FirstOrDefault(c => c.GenderID == person.Gender.GenderID);
+                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == city.Country.CountryID);
 
                     ctx.Cities.Attach(city);
-                    ctx.Countries.Attach(country);
-                    ctx.Genders.Attach(gender);
                     ctx.Salutations.Attach(salutation);
+                    ctx.Genders.Attach(gender);
+                    ctx.Countries.Attach(country);
+
+                    person.City = city;
+                    person.Salutation = salutation;
+                    person.Gender = gender;
+
                     ctx.Persons.Add(person);
                     ctx.SaveChanges();
                 }
@@ -42,7 +46,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
         }
@@ -61,7 +65,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
 
@@ -80,7 +84,7 @@ namespace Server.DB
             }
             catch (Exception e)
             {
-                System.Diagnostics.Trace.WriteLine(e.Message);
+                System.Diagnostics.Trace.WriteLine(e);
                 return false;
             }
         }
