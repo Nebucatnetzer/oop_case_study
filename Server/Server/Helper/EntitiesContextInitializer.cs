@@ -12,6 +12,7 @@ namespace Server.Helper
             var countries = GenerateData.CreateCountries();
             var cities = GenerateData.CreateCities();
             var doctors = GenerateData.CreateDoctors();
+            var foodplaces = GenerateData.CreateFoodPlaces();
 
             foreach (var s in salutations)
             {
@@ -32,6 +33,10 @@ namespace Server.Helper
             foreach (var d in doctors)
             {
                 context.Doctors.Add(d);
+            }
+            foreach (var f in foodplaces)
+            {
+                context.FoodPlaces.Add(f);
             }
             context.SaveChanges();
 

@@ -12,6 +12,8 @@ namespace Server.Helper
         private static List<Doctor> Doctors = new List<Doctor>();
         private static List<Country> Countries = new List<Country>();
         private static List<City> Cities = new List<City>();
+        private static List<FoodPlace> foodPlaces = new List<FoodPlace>();
+        private static List<PatientAtFoodPlace> relations = new List<PatientAtFoodPlace>();
         private static Random Rnd = new Random();
 
         private static List<string> SalutationList = new List<string>(new string[]
@@ -119,5 +121,20 @@ namespace Server.Helper
             }
             return Doctors;
         }
-    }
+        public static List<FoodPlace> CreateFoodPlaces()
+        {
+            for (int i = 0; i < 50; i++)
+            {
+                foodPlaces.Add(new FoodPlace()
+                {
+                    Name = "FoodPlace" + i,
+                    Description = "b" + i,
+                    City = Cities[i],
+                    Streetname = "Musterstrase",
+                    Streetnumber = i.ToString()
+                });
+            }
+            return foodPlaces;
+        }
+     }
 }
