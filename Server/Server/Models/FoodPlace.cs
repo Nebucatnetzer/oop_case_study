@@ -15,7 +15,7 @@ namespace Server.Models
         private ICollection<PatientAtFoodPlace> _PatientAtFoodPlaces;
 
         [DataMember]
-        public int FoodPlaceID { get => _FoodPlaceID; set => _FoodPlaceID = value; }       
+        public int FoodPlaceID { get => _FoodPlaceID; set => _FoodPlaceID = value; }
         [DataMember]
         public virtual City City { get => _City; set => _City = value; }
         [DataMember]
