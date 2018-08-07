@@ -18,14 +18,16 @@
             <ColumnDefinition Width="455*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Add new foodplace" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="433" FontFamily="Tahoma" FontSize="24" Margin="0.4,-3,0,0" Grid.Column="1" Grid.RowSpan="2"/>
-        <Label Content="Description" Margin="1,173.4,453.8,0" Grid.Row="1" VerticalAlignment="Top" Height="41" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="Description" Margin="0,231.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="41" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
         <Label Content="Name" Margin="0,30.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
         <Label Content="Street" Margin="0,79.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtFoodPlaceDescription" HorizontalAlignment="Left" Height="34" Margin="137,172.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtFoodPlaceDescription" HorizontalAlignment="Left" Height="108" Margin="136,230.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtFoodPlaceName" HorizontalAlignment="Left" Height="34" Margin="136,30.4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtFoodPlaceStreetName" Height="34" Margin="136,79.4,23.8,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="House Nr." Margin="0,125.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="34" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtFoodPlaceHouseNumber" Height="34" Margin="137,125.4,23.8,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Button x:Name="btnAddFoodPlace" Content="ADD FOODPLACE" HorizontalAlignment="Left" Margin="136,371.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Click="btnAddFoodPlace_Click" Grid.ColumnSpan="2" Height="44" FontSize="20"/>
+        <Label Content="City" Margin="0,174.4,454.8,0" Grid.Row="1" VerticalAlignment="Top" Height="39" FontFamily="Tahoma" FontSize="24" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="ComboBoxFPCities" HorizontalAlignment="Left" Margin="0.4,179.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="433" Grid.Column="1" Height="34"/>
     </Grid>
 </Page>

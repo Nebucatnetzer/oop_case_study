@@ -60,7 +60,7 @@ namespace WpfWebClient
             exam.Date = dateboxExamDate.SelectedDate.Value;
             exam.Doctor = (Doctor)ComboBoxDoctors.SelectedValue;
             exam.Patient = (Person)ComboBoxPatients.SelectedValue;
-            exam.Description = txtDescription.ToString();
+            exam.Description = txtDescription.Text;
             exam.Strain = (Strain)ComboBoxStrains.SelectedValue;
 
             client.WriteExam(exam);
