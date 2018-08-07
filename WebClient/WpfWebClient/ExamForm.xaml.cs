@@ -27,24 +27,24 @@ namespace WpfWebClient
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
 
-            //Retrieve all doctors and save them into "doctorlist"
+            // Retrieve all doctors and save them into "doctorlist"
             List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
 
-            //Display all doctors with name in Combobox
+            // Display all doctors with name in Combobox
             ComboBoxDoctors.ItemsSource = doctorlist;
             ComboBoxDoctors.DisplayMemberPath = "FirstName";
 
-            //Retrieve all patients and save them into "patientlist"
+            // Retrieve all patients and save them into "patientlist"
             List<WpfWebClient.ServiceReferenceEHEC.Person> patientlist = new List<ServiceReferenceEHEC.Person>(client.GetPersons());
 
-            //Display all patients with name in Combobox
+            // Display all patients with name in Combobox
             ComboBoxPatients.ItemsSource = patientlist;
             ComboBoxPatients.DisplayMemberPath = "FirstName";
 
-            //Retrieve all strains and save them into "strainlist"
+            // Retrieve all strains and save them into "strainlist"
             List<WpfWebClient.ServiceReferenceEHEC.Strain> strainlist = new List<ServiceReferenceEHEC.Strain>(client.GetStrains());
 
-            //Display all strains with name in Combobox
+            // Display all strains with name in Combobox
             ComboBoxStrains.ItemsSource = strainlist;
             ComboBoxStrains.DisplayMemberPath = "Name";
 

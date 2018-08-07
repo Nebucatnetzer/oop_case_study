@@ -52,7 +52,7 @@ namespace WpfWebClient
                 {
                     // Pick a random number between 0 and 25
                     // to select a letter from the letters array.
-                    int letter_num = rand.Next(0, letters.Length - 1);
+                    int letter_num = rand.Next(2, letters.Length - 1);
 
                     // Append the letter.
                     word += letters[letter_num];

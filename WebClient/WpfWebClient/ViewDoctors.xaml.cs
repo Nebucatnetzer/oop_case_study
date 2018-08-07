@@ -28,7 +28,7 @@ namespace WpfWebClient
 
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            //call method GetDoctors and save them to doctorlist
+            // call method GetDoctors and save them to doctorlist
 
             List<WpfWebClient.ServiceReferenceEHEC.Doctor> doctorlist = new List<ServiceReferenceEHEC.Doctor>(client.GetDoctors());
 

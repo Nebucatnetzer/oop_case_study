@@ -27,10 +27,10 @@ namespace WpfWebClient
 
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            //Retrieve all cities and save them into "citylist"
+            // Retrieve all cities and save them into "citylist"
             List<WpfWebClient.ServiceReferenceEHEC.City> citylist = new List<ServiceReferenceEHEC.City>(client.GetCities());
 
-            //Display all cities with name in Combobox
+            // Display all cities with name in Combobox
             ComboBoxFPCities.ItemsSource = citylist;
             ComboBoxFPCities.DisplayMemberPath = "Name";
         }
