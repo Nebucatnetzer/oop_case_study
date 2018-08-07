@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Server.DB;
+using System.Linq;
 
 namespace Server.Models
 {
@@ -13,13 +14,16 @@ namespace Server.Models
             Context ctx = new Context();
             this.Patients = new List<Person>();
             this.FoodPlaces = new List<FoodPlace>();
+            List <FoodPlace> RawFoodPlaces = new List<FoodPlace>();
             PatientAtFoodPlaceDB relationsDB = new PatientAtFoodPlaceDB();
             this.Relations = new List<PatientAtFoodPlace>(relationsDB.GetAllRelations());
             foreach (var relation in this.Relations)
             {
                 this.Patients.Add(relation.Patient);
-                this.FoodPlaces.Add(relation.FoodPlace);
+                RawFoodPlaces.Add(relation.FoodPlace);
             }
+            var unique_foodplaces = new HashSet<FoodPlace>(RawFoodPlaces);
+            this.FoodPlaces = unique_foodplaces.ToList();
         }
         public List<Node> GenerateNodes()
         {

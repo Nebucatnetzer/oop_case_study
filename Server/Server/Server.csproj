@@ -119,7 +119,7 @@
     </Compile>
     <Compile Include="IService.cs" />
     <Compile Include="Models\City.cs" />
-    <Compile Include="Helper\ClusterData.cs" />
+    <Compile Include="Models\ClusterData.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Edge.cs" />
