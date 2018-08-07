@@ -8,6 +8,8 @@ namespace Server.Models
     public class PatientAtFoodPlace
     {
         [DataMember]
+        public int PatientAtFoodPlaceID { get; set; }
+        [DataMember]
         public int PatientID { get; set; }
         [DataMember]
         public int FoodPlaceID { get; set; }

@@ -80,7 +80,7 @@ namespace Server.DB
                 .HasRequired(e => e.Strain);
 
             modelBuilder.Entity<PatientAtFoodPlace>()
-                .HasKey(pf => new { pf.PatientID, pf.FoodPlaceID });
+                .HasKey(pf => pf.PatientAtFoodPlaceID);
 
             modelBuilder.Entity<Person>()
                 .Property(p => p.FirstName)
@@ -130,6 +130,16 @@ namespace Server.DB
                 .HasRequired(f => f.City)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PatientAtFoodPlace>()
+                .HasRequired(p => p.Patient)
+                .WithMany(pf => pf.PatientAtFoodPlaces)
+                .HasForeignKey(p => p.PatientID);
+
+            modelBuilder.Entity<PatientAtFoodPlace>()
+                .HasRequired(f => f.FoodPlace)
+                .WithMany(pf => pf.PatientAtFoodPlaces)
+                .HasForeignKey(f => f.FoodPlaceID);
         }
     }
 }
