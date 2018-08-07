@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using Server.DB;
 using Server.Models;
-using Server.Helper;
 using Newtonsoft.Json;
 
 namespace Server
@@ -16,7 +13,6 @@ namespace Server
             ClusterData cd = new ClusterData();
             this.nodes = JsonConvert.SerializeObject(cd.GenerateNodes());
             this.edges = JsonConvert.SerializeObject(cd.GenerateEdges());
-
         }
     }
 }
