@@ -39,17 +39,20 @@ namespace WpfWebClient
         {
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            // create new foodplace from user input
+                // create new foodplace from user input
 
-            FoodPlace fp = new FoodPlace();
+                FoodPlace fp = new FoodPlace();
 
-            fp.Name = txtFoodPlaceName.Text;
-            fp.Streetname = txtFoodPlaceStreetName.Text;
-            fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
-            fp.Description = txtFoodPlaceDescription.Text;
-            fp.City = (City)ComboBoxFPCities.SelectedValue;
+                fp.Name = txtFoodPlaceName.Text;
+                fp.Streetname = txtFoodPlaceStreetName.Text;
+                fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
+                fp.Description = txtFoodPlaceDescription.Text;
+                fp.City = (City)ComboBoxFPCities.SelectedValue;
 
-            client.WriteFoodPlace(fp);
+                client.WriteFoodPlace(fp);
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
 
             client.Close();
         }

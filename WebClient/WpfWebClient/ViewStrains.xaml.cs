@@ -32,6 +32,7 @@ namespace WpfWebClient
             List<WpfWebClient.ServiceReferenceEHEC.Strain> strainlist = new List<ServiceReferenceEHEC.Strain>(client.GetStrains());
 
             DataGridViewStrains.ItemsSource = strainlist;
+            
 
             client.Close();
         }

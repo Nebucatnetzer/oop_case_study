@@ -82,7 +82,10 @@ namespace WpfWebClient
             p.City = (City)ComboBoxCities.SelectedValue;
 
             client.WritePatient(p);
-            
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
             client.Close();
            
         }

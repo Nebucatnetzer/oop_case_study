@@ -65,6 +65,9 @@ namespace WpfWebClient
 
             client.WriteExam(exam);
 
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
             client.Close();
         }
     }
