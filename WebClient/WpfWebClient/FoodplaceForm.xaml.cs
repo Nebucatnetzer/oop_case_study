@@ -24,22 +24,37 @@ namespace WpfWebClient
         public FoodplaceForm()
         {
             InitializeComponent();
+
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            // Retrieve all cities and save them into "citylist"
+            List<WpfWebClient.ServiceReferenceEHEC.City> citylist = new List<ServiceReferenceEHEC.City>(client.GetCities());
+
+            // Display all cities with name in Combobox
+            ComboBoxFPCities.ItemsSource = citylist;
+            ComboBoxFPCities.DisplayMemberPath = "Name";
+            
         }
 
         private void btnAddFoodPlace_Click(object sender, RoutedEventArgs e)
         {
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            client.Open();
+                // create new foodplace from user input
 
-            FoodPlace fp = new FoodPlace();
+                FoodPlace fp = new FoodPlace();
 
-            fp.Name = txtFoodPlaceName.Text;
-            fp.Streetname = txtFoodPlaceStreetName.Text;
-            fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
-            fp.Description = txtFoodPlaceDescription.Text;
 
-            client.WriteFoodPlace(fp);
+                fp.Streetname = txtFoodPlaceStreetName.Text;
+                fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
+                fp.Name = txtFoodPlaceName.Text;
+                fp.Description = txtFoodPlaceDescription.Text;
+                fp.City = (City)ComboBoxFPCities.SelectedValue;
+
+                client.WriteFoodPlace(fp);
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
 
             client.Close();
         }

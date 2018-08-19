@@ -27,31 +27,31 @@ namespace WpfWebClient
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
            
 
-            //Retrieve all salutations and save them into "salutationlist"
+            // Retrieve all salutations and save them into "salutationlist"
             List<WpfWebClient.ServiceReferenceEHEC.Salutation> salutationlist = new List<ServiceReferenceEHEC.Salutation>(client.GetSalutations());
 
-            //Display all salutations with name in Combobox
+            // Display all salutations with name in Combobox
             ComboBoxSalutations.ItemsSource = salutationlist;
             ComboBoxSalutations.DisplayMemberPath = "Name";
 
-            //Retrieve all genders and save them into "genderlist"
+            // Retrieve all genders and save them into "genderlist"
             List<WpfWebClient.ServiceReferenceEHEC.Gender> genderlist = new List<ServiceReferenceEHEC.Gender>(client.GetGenders());
 
-            //Display all genders with name in Combobox
+            // Display all genders with name in Combobox
             ComboBoxGenders.ItemsSource = genderlist;
             ComboBoxGenders.DisplayMemberPath = "Name";
 
-            //Retrieve all cities and save them into "citylist"
+            // Retrieve all cities and save them into "citylist"
             List<WpfWebClient.ServiceReferenceEHEC.City> citylist = new List<ServiceReferenceEHEC.City>(client.GetCities());
 
-            //Display all cities with name in Combobox
+            // Display all cities with name in Combobox
             ComboBoxCities.ItemsSource = citylist;
             ComboBoxCities.DisplayMemberPath = "Name";
 
-            //Retrieve all salutations and save them into "countrylist"
+            // Retrieve all salutations and save them into "countrylist"
             List<WpfWebClient.ServiceReferenceEHEC.Country> countrylist = new List<ServiceReferenceEHEC.Country>(client.GetCountries());
 
-            //Display all countries with name in Combobox
+            // Display all countries with name in Combobox
             ComboBoxCountries.ItemsSource = countrylist;
             ComboBoxCountries.DisplayMemberPath = "Name";
 
@@ -68,11 +68,11 @@ namespace WpfWebClient
 
             Person p = new Person();
 
-            //if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
-            //if (ComboBoxGenders.SelectedValue != null && ComboBoxGenders.SelectedValue is Gender)
-            //if (ComboBoxCities.SelectedValue != null && ComboBoxCities.SelectedValue is City)
+            // if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
+            // if (ComboBoxGenders.SelectedValue != null && ComboBoxGenders.SelectedValue is Gender)
+            // if (ComboBoxCities.SelectedValue != null && ComboBoxCities.SelectedValue is City)
 
-            //Pick all selected fields and send object to client
+            // Pick all selected fields and send object to client
             p.Salutation =  (Salutation)ComboBoxSalutations.SelectedValue;
             p.Gender = (Gender)ComboBoxGenders.SelectedValue;
             p.LastName = txtLastName.Text;
@@ -82,7 +82,10 @@ namespace WpfWebClient
             p.City = (City)ComboBoxCities.SelectedValue;
 
             client.WritePatient(p);
-            
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
             client.Close();
            
         }

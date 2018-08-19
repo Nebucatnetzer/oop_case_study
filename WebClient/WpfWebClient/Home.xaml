@@ -10,7 +10,17 @@
 
     <Grid Width="593" Height="565">
         <Label Content="Willkommen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="48" Height="61" Width="272"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="356" Width="573" FontSize="20"><Run Text="Haben Sie die Applikation zum ersten Mal gestartet"/><Run Text="?"/><LineBreak/><Run/><LineBreak/><Run Text="1. Erstellen Sie neue Patienten"/><LineBreak/><Run Text="2. Erfassen Sie neue Bakterienstämme"/><LineBreak/><Run Text="3. Erfassen Sie einen neuen Fall"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="431" Width="573" FontSize="20"><Run Text="Haben Sie die Applikation zum ersten Mal gestartet"/><Run Text="?"/><LineBreak/><Run/><LineBreak/><Run Text="1. Erstellen Sie neue Patienten"/><LineBreak/><Run Text="2. "/><Run Text="Generieren "/><Run Text="Sie neue Bakterienstämme"/><Run Text=" "/><LineBreak/><Run/><LineBreak/><Run Text="Enter desired letters"/><Run Text=" per strain"/><Run Text=": "/><Run Text="&#x9;"/><InlineUIContainer>
+                <TextBox x:Name="txtNumLetters" Height="30" TextWrapping="Wrap" Text="5" Width="120"/>
+            </InlineUIContainer><LineBreak/><Run Text="Enter desired"/><Run Text=" amount of"/><Run Text=" strains: "/><Run Text="&#x9;"/><InlineUIContainer>
+                <TextBox x:Name="txtNumStrains" Height="30" TextWrapping="Wrap" Text="100" Width="120"/>
+            </InlineUIContainer><LineBreak/><LineBreak/><InlineUIContainer>
+                <Button x:Name="btnRandomStrainGenerator" Content="CREATE RANDOM STRAINS" Width="580" Height="34" Click="btnRandomStrainGenerator_Click"/>
+            </InlineUIContainer><Run Text="&#x9;"/><LineBreak/><Run Text="3. Erfassen Sie einen neuen Fall"/><Run Text=" oder erstellen Sie Testdaten mit einem "/><Run Text="K"/><Run Text="lick auf diesen Button: "/><InlineUIContainer>
+                <Button Content="GENERATE EXAMS" Width="283" Click="btnGenerateExams"/>
+            </InlineUIContainer><LineBreak/><Run Text="4. Erfassen Sie neue FoodPlaces oder erstellen Sie Testdaten mit einem Klick auf diesen Button: "/><InlineUIContainer>
+                <Button Content="GENERATE FOODPLACES" Width="284" Click="btnGenerateFoodPlaces"/>
+            </InlineUIContainer><LineBreak/></TextBlock>
 
     </Grid>
 </Page>

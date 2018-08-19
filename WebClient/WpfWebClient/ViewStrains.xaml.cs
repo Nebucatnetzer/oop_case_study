@@ -27,11 +27,12 @@ namespace WpfWebClient
 
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            //call method GetStrains and save them to strainlist
+            // call method GetStrains and save them to strainlist
 
             List<WpfWebClient.ServiceReferenceEHEC.Strain> strainlist = new List<ServiceReferenceEHEC.Strain>(client.GetStrains());
 
             DataGridViewStrains.ItemsSource = strainlist;
+            
 
             client.Close();
         }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfWebClient.ServiceReferenceEHEC;
+using WpfWebClient.Helper;
 
 namespace WpfWebClient
 {
@@ -24,7 +25,95 @@ namespace WpfWebClient
         public Home()
         {
             InitializeComponent();
+            
         }
 
+        private void btnRandomStrainGenerator_Click(object sender, RoutedEventArgs e)
+        {
+            // create new client connection
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            // msgbox to confirm action
+            if (MessageBox.Show("This could take a while, are you sure?", "More strains?",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+
+                // Get the number of words and letters per word.
+                int num_letters = int.Parse(txtNumLetters.Text);
+            int num_words = int.Parse(txtNumStrains.Text);
+
+            // Make an array of the letters we will use.
+            char[] letters = "AeIoUbRaTdAtIlU".ToCharArray();
+
+            // Make a random number generator.
+            Random rand = new Random();
+
+                // Make the words.
+                for (int i = 1; i <= num_words; i++)
+                {
+                    // Make a word.
+                    string word = "";
+                    for (int j = 1; j <= num_letters; j++)
+                    {
+                        // Pick a random number between 0 and 25
+                        // to select a letter from the letters array.
+                        int letter_num = rand.Next(2, letters.Length - 1);
+
+                        // Append the letter.
+                        word += letters[letter_num];
+                    }
+
+                    // Write the strains into a list
+                    List<string> generatedStrains = new List<string>();
+
+                    generatedStrains.Add(word);
+
+                    foreach (var item in generatedStrains)
+                    {
+                        Strain s = new Strain();
+                        s.Name = item;
+                        client.WriteStrain(s);
+                    }
+                }
+            }
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            client.Close();
+        }
+
+        private void btnGenerateExams(object sender, RoutedEventArgs e)
+        {
+            // create new client connection
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            //to be continued
+
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            client.Close();
+        }
+
+        private void btnGenerateFoodPlaces(object sender, RoutedEventArgs e)
+        {
+            // create new client connection
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+
+            //to be continued
+            var foodplaces = GenerateTestData.CreateFoodPlaces();
+
+            foreach (var f in foodplaces)
+            {
+                client.WriteFoodPlace(f);
+            }
+
+            // Show success msgbox
+            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            client.Close();
+        }
     }
 }
