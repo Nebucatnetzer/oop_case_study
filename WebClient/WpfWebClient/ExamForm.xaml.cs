@@ -48,6 +48,13 @@ namespace WpfWebClient
             ComboBoxStrains.ItemsSource = strainlist;
             ComboBoxStrains.DisplayMemberPath = "Name";
 
+            // Retrieve all foodplaces and save them into "fplist"
+            List<WpfWebClient.ServiceReferenceEHEC.FoodPlace> fplist = new List<ServiceReferenceEHEC.FoodPlace>(client.GetFoodPlaces());
+
+            // Display all foodplaces with name in Combobox
+            ComboBoxFoodPlace.ItemsSource = fplist;
+            ComboBoxFoodPlace.DisplayMemberPath = "Name";
+
             client.Close();
         }
 
@@ -64,6 +71,17 @@ namespace WpfWebClient
             exam.Strain = (Strain)ComboBoxStrains.SelectedValue;
 
             client.WriteExam(exam);
+
+            PatientAtFoodPlace patf = new PatientAtFoodPlace();
+
+
+            patf.FoodPlace = (FoodPlace)ComboBoxFoodPlace.SelectedValue;
+            patf.Patient = (Person)ComboBoxPatients.SelectedValue;
+            patf.PatientID = ComboBoxPatients.SelectedIndex;
+            patf.VistingDate = dateboxFoodplaceDate.SelectedDate.Value;
+
+
+            client.WriteRelation(patf);
 
             // Show success msgbox
             System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);

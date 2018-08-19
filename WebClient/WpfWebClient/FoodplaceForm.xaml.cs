@@ -33,6 +33,7 @@ namespace WpfWebClient
             // Display all cities with name in Combobox
             ComboBoxFPCities.ItemsSource = citylist;
             ComboBoxFPCities.DisplayMemberPath = "Name";
+            
         }
 
         private void btnAddFoodPlace_Click(object sender, RoutedEventArgs e)
@@ -43,9 +44,10 @@ namespace WpfWebClient
 
                 FoodPlace fp = new FoodPlace();
 
-                fp.Name = txtFoodPlaceName.Text;
+
                 fp.Streetname = txtFoodPlaceStreetName.Text;
                 fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
+                fp.Name = txtFoodPlaceName.Text;
                 fp.Description = txtFoodPlaceDescription.Text;
                 fp.City = (City)ComboBoxFPCities.SelectedValue;
 
