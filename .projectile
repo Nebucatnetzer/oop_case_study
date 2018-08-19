@@ -1,0 +1,8 @@
+-.vs/
+-packages/
+-bin/
+-*.datasource
+-*.dll
+-*.svcinfo
+-*.svcmap
+-*.cache
