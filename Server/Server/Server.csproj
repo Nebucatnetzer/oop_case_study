@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="home.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Service.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -110,12 +110,12 @@
     </Compile>
     <Compile Include="Helper\GenerateData.cs" />
     <Compile Include="Helper\MappingExtensions.cs" />
-    <Compile Include="home.aspx.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="IService.cs" />
     <Compile Include="Models\City.cs" />
