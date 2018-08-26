@@ -77,5 +77,18 @@ namespace WpfWebClient.Helper
 
             return Foodplaces;
         }
+
+        public static List<PatientAtFoodPlace> CreatePatientAtFoodPlaces()
+        {
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+            List<WpfWebClient.ServiceReferenceEHEC.FoodPlace> foodPlaces = new List<ServiceReferenceEHEC.FoodPlace>(client.GetFoodPlaces());
+            List<WpfWebClient.ServiceReferenceEHEC.Person> patients = new List<ServiceReferenceEHEC.Person>(client.GetPersons());
+
+            foodPlaces.OrderBy(x => random.Next()).Take(50);
+            
+
+        }
+
+        return x
     }
 }
