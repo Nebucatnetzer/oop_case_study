@@ -99,14 +99,12 @@ namespace WpfWebClient
 
             // create a bunch of people at foodplaces
 
+            var patientsatfps = GenerateTestData.CreatePatientAtFoodPlaces();
 
-
-
-
-
-
-
-
+            foreach (var f in patientsatfps)
+            {
+                client.WriteRelation(f);
+            }
 
 
 
