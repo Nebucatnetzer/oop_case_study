@@ -95,9 +95,15 @@ namespace WpfWebClient.Helper
 
             do
             {
-                patf.FoodPlace = (FoodPlace)foodPlaces.OrderBy(x => random.Next()).Take(1);
-                patf.Patient = (Person)patients.OrderBy(x => random.Next()).Take(1);
-                patf.PatientID = i;
+                int randnumFP = random.Next(0, foodPlaces.Count());
+                FoodPlace foodpl = foodPlaces[randnumFP];
+
+                int randnumP = random.Next(0, patients.Count());
+                Person patient = patients[randnumP];
+                
+                patf.FoodPlace = foodpl;
+                patf.Patient = patient;
+                //patf.PatientID = i;
                 patf.VistingDate = new DateTime(2005, 12, 20);
 
                 PatientsAtFoodPlaces.Add(patf);
