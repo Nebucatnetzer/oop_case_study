@@ -89,12 +89,12 @@ namespace WpfWebClient.Helper
 
             
 
-            PatientAtFoodPlace patf = new PatientAtFoodPlace();
-
-            int i = 300;
+            int i = 0;
 
             do
             {
+                PatientAtFoodPlace patf = new PatientAtFoodPlace();
+
                 int randnumFP = random.Next(0, foodPlaces.Count());
                 FoodPlace foodpl = foodPlaces[randnumFP];
 
@@ -110,7 +110,7 @@ namespace WpfWebClient.Helper
                 
                 i++;
 
-            } while (i < 375);
+            } while (i < 5);
 
             return PatientsAtFoodPlaces;
         }
