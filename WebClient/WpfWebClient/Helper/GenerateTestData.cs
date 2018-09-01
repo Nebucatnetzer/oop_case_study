@@ -10,6 +10,7 @@ namespace WpfWebClient.Helper
     public static class GenerateTestData
     {
         private static List<FoodPlace> Foodplaces = new List<FoodPlace>();
+        private static List<PatientAtFoodPlace> PatientsAtFoodPlaces = new List<PatientAtFoodPlace>();
         private static List<Exam> Exams = new List<Exam>();
         private static Random random = new Random();
 
@@ -53,10 +54,10 @@ namespace WpfWebClient.Helper
                 int Description = random.Next(FoodPlaceDescription.Count);
                 string FoodPlaceDescr = FoodPlaceDescription[Description];
                 int StreetName = random.Next(FoodPlaceStreetName.Count);
-                string FoodPlacesm = FoodPlaceStreetName[StreetName];
+                string FoodPlacesn = FoodPlaceStreetName[StreetName];
 
                 string FoodPlaceName = FoodPlaceNameFirstPart[FirstPart] + FoodPlaceNameSecondPart[SecondPart];
-                string streetname = FoodPlacesm;
+                string streetname = FoodPlacesn;
                 string fpdescr = FoodPlaceDescr;
                 int StreetNumber = random.Next(1, 100);
                 int CityID = random.Next(1, cities.Count());
@@ -76,6 +77,42 @@ namespace WpfWebClient.Helper
             }
 
             return Foodplaces;
+        }
+
+
+
+        public static List<PatientAtFoodPlace> CreatePatientAtFoodPlaces()
+        {
+            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
+            List<WpfWebClient.ServiceReferenceEHEC.FoodPlace> foodPlaces = new List<ServiceReferenceEHEC.FoodPlace>(client.GetFoodPlaces());
+            List<WpfWebClient.ServiceReferenceEHEC.Person> patients = new List<ServiceReferenceEHEC.Person>(client.GetPersons());
+
+            
+
+            int i = 0;
+
+            do
+            {
+                PatientAtFoodPlace patf = new PatientAtFoodPlace();
+
+                int randnumFP = random.Next(0, foodPlaces.Count());
+                FoodPlace foodpl = foodPlaces[randnumFP];
+
+                int randnumP = random.Next(0, patients.Count());
+                Person patient = patients[randnumP];
+                
+                patf.FoodPlace = foodpl;
+                patf.Patient = patient;
+                //patf.PatientID = i;
+                patf.VistingDate = new DateTime(2005, 12, 20);
+
+                PatientsAtFoodPlaces.Add(patf);
+                
+                i++;
+
+            } while (i < 5);
+
+            return PatientsAtFoodPlaces;
         }
     }
 }

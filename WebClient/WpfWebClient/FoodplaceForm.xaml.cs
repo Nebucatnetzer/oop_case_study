@@ -44,7 +44,30 @@ namespace WpfWebClient
 
                 FoodPlace fp = new FoodPlace();
 
+            // check if any box is empty
 
+            if (ComboBoxFPCities.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("Please select a city", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (txtFoodPlaceName.Text == null)
+            {
+                System.Windows.MessageBox.Show("Please enter a name for the food place", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (txtFoodPlaceHouseNumber.Text == null)
+            {
+                System.Windows.MessageBox.Show("Please enter a house number", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (txtFoodPlaceStreetName.Text == null)
+            {
+                System.Windows.MessageBox.Show("Please enter a street name", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            else
+            {
                 fp.Streetname = txtFoodPlaceStreetName.Text;
                 fp.Streetnumber = txtFoodPlaceHouseNumber.Text;
                 fp.Name = txtFoodPlaceName.Text;
@@ -53,8 +76,9 @@ namespace WpfWebClient
 
                 client.WriteFoodPlace(fp);
 
-            // Show success msgbox
-            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+                // Show success msgbox
+                System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
 
             client.Close();
         }

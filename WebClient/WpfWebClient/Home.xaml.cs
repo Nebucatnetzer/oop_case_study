@@ -43,7 +43,7 @@ namespace WpfWebClient
             int num_words = int.Parse(txtNumStrains.Text);
 
             // Make an array of the letters we will use.
-            char[] letters = "AeIoUbRaTdAtIlU".ToCharArray();
+            char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
             // Make a random number generator.
             Random rand = new Random();
@@ -71,7 +71,7 @@ namespace WpfWebClient
                     foreach (var item in generatedStrains)
                     {
                         Strain s = new Strain();
-                        s.Name = item;
+                        s.Name = "EHEC-"+ item;
                         client.WriteStrain(s);
                     }
                 }
@@ -83,26 +83,13 @@ namespace WpfWebClient
             client.Close();
         }
 
-        private void btnGenerateExams(object sender, RoutedEventArgs e)
+
+        private void btnCreateTestdata_Click(object sender, RoutedEventArgs e)
         {
             // create new client connection
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
 
-            //to be continued
-
-
-            // Show success msgbox
-            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            client.Close();
-        }
-
-        private void btnGenerateFoodPlaces(object sender, RoutedEventArgs e)
-        {
-            // create new client connection
-            WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
-
-            //to be continued
+            // create a bunch of foodplaces
             var foodplaces = GenerateTestData.CreateFoodPlaces();
 
             foreach (var f in foodplaces)
@@ -110,10 +97,25 @@ namespace WpfWebClient
                 client.WriteFoodPlace(f);
             }
 
+            // create a bunch of people at foodplaces
+
+            var patientsatfps = GenerateTestData.CreatePatientAtFoodPlaces();
+
+            foreach (var f in patientsatfps)
+            {
+                client.WriteRelation(f);
+            }
+
+
+
             // Show success msgbox
             System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
 
+
             client.Close();
+
+
+
         }
     }
 }

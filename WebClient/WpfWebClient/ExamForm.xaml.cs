@@ -55,6 +55,17 @@ namespace WpfWebClient
             ComboBoxFoodPlace.ItemsSource = fplist;
             ComboBoxFoodPlace.DisplayMemberPath = "Name";
 
+            // check for proper data
+            if (strainlist.Count == 0)
+            {
+                System.Windows.MessageBox.Show("Please create at least one Strain", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (fplist.Count == 0)
+            {
+                System.Windows.MessageBox.Show("Please create at least one Food Place", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
             client.Close();
         }
 
@@ -64,29 +75,75 @@ namespace WpfWebClient
 
             Exam exam = new Exam();
 
-            exam.Date = dateboxExamDate.SelectedDate.Value;
-            exam.Doctor = (Doctor)ComboBoxDoctors.SelectedValue;
-            exam.Patient = (Person)ComboBoxPatients.SelectedValue;
-            exam.Description = txtDescription.Text;
-            exam.Strain = (Strain)ComboBoxStrains.SelectedValue;
+            // check if any box is empty
 
-            client.WriteExam(exam);
+            if (ComboBoxDoctors.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("Please choose a doctor", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+                
+            }
 
-            PatientAtFoodPlace patf = new PatientAtFoodPlace();
+            if (dateboxExamDate.SelectedDate == null)
+            {
+                System.Windows.MessageBox.Show("Please enter a date of consultation", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (ComboBoxPatients.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("No Patient? Really?", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (ComboBoxStrains.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("Why would you fill out an exam when there is no strain?", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            else
+            {
+                exam.Date = dateboxExamDate.SelectedDate.Value;
+                exam.Doctor = (Doctor)ComboBoxDoctors.SelectedValue;
+                exam.Patient = (Person)ComboBoxPatients.SelectedValue;
+                exam.Description = txtDescription.Text;
+                exam.Strain = (Strain)ComboBoxStrains.SelectedValue;
 
 
-            patf.FoodPlace = (FoodPlace)ComboBoxFoodPlace.SelectedValue;
-            patf.Patient = (Person)ComboBoxPatients.SelectedValue;
-            patf.PatientID = ComboBoxPatients.SelectedIndex;
-            patf.VistingDate = dateboxFoodplaceDate.SelectedDate.Value;
+
+                client.WriteExam(exam);
+            }
 
 
-            client.WriteRelation(patf);
+           PatientAtFoodPlace patf = new PatientAtFoodPlace();
 
-            // Show success msgbox
-            System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            // check if any box is empty
+
+            if (ComboBoxFoodPlace.SelectedIndex == -1)
+            {
+                System.Windows.MessageBox.Show("Please choose a food place", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            if (dateboxFoodplaceDate.SelectedDate == null)
+            {
+                System.Windows.MessageBox.Show("Please enter a date at Foodplace", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+
+            else
+            {
+                patf.FoodPlace = (FoodPlace)ComboBoxFoodPlace.SelectedValue;
+                patf.Patient = (Person)ComboBoxPatients.SelectedValue;
+                patf.PatientID = ComboBoxPatients.SelectedIndex;
+                patf.VistingDate = dateboxFoodplaceDate.SelectedDate.Value;
+
+
+                client.WriteRelation(patf);
+
+                // Show success msgbox
+                System.Windows.MessageBox.Show("Success", "INFO", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
 
             client.Close();
+
         }
     }
 }

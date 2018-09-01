@@ -428,6 +428,9 @@ namespace WpfWebClient.ServiceReferenceEHEC {
         private WpfWebClient.ServiceReferenceEHEC.Person PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatientAtFoodPlaceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PatientIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -478,6 +481,19 @@ namespace WpfWebClient.ServiceReferenceEHEC {
                 if ((object.ReferenceEquals(this.PatientField, value) != true)) {
                     this.PatientField = value;
                     this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PatientAtFoodPlaceID {
+            get {
+                return this.PatientAtFoodPlaceIDField;
+            }
+            set {
+                if ((this.PatientAtFoodPlaceIDField.Equals(value) != true)) {
+                    this.PatientAtFoodPlaceIDField = value;
+                    this.RaisePropertyChanged("PatientAtFoodPlaceID");
                 }
             }
         }

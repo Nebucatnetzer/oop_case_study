@@ -48,6 +48,7 @@
       <xs:element minOccurs="0" name="FoodPlace" nillable="true" type="tns:FoodPlace" />
       <xs:element minOccurs="0" name="FoodPlaceID" type="xs:int" />
       <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="PatientAtFoodPlaceID" type="xs:int" />
       <xs:element minOccurs="0" name="PatientID" type="xs:int" />
       <xs:element minOccurs="0" name="VistingDate" type="xs:dateTime" />
     </xs:sequence>
