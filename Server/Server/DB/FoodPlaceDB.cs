@@ -24,29 +24,18 @@ namespace Server.DB
             {
                 using (Context ctx = new Context())
                 {
-                    var foodplaceFromDB = ctx.FoodPlaces.SingleOrDefault(x => x.Name == foodplace.Name
-                        && x.Streetname == foodplace.Streetname
-                        && x.Streetnumber == foodplace.Streetnumber
-                        && x.City.CityID == foodplace.City.CityID);
-                    if (foodplaceFromDB != null)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        var city = ctx.Cities.FirstOrDefault(c => c.CityID == foodplace.City.CityID);
-                        var country = ctx.Countries.FirstOrDefault(c => c.CountryID == foodplace.City.Country.CountryID);
+                    var city = ctx.Cities.FirstOrDefault(c => c.CityID == foodplace.City.CityID);
+                    var country = ctx.Countries.FirstOrDefault(c => c.CountryID == foodplace.City.Country.CountryID);
 
-                        ctx.Cities.Attach(city);
-                        ctx.Countries.Attach(country);
+                    ctx.Cities.Attach(city);
+                    ctx.Countries.Attach(country);
 
-                        foodplace.City = city;
+                    foodplace.City = city;
 
-                        ctx.FoodPlaces.Add(foodplace);
-                        ctx.SaveChanges();
-                        return true;
-                    }
+                    ctx.FoodPlaces.Add(foodplace);
+                    ctx.SaveChanges();
                 }
+                return true;
             }
             catch (Exception e)
             {

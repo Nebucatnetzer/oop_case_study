@@ -26,40 +26,31 @@ namespace Server.DB
             {
                 using (Context ctx = new Context())
                 {
-                    var relation = ctx.PatientAtFoodPlaces.SingleOrDefault(x => x.Patient.PersonID == patientAtFoodPlace.Patient.PersonID
-                        && x.FoodPlace.FoodPlaceID == patientAtFoodPlace.FoodPlace.FoodPlaceID);
-                    if (relation != null)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        var patient = ctx.Persons.FirstOrDefault(p => p.PersonID == patientAtFoodPlace.Patient.PersonID);
-                        var foodplace = ctx.FoodPlaces.FirstOrDefault(f => f.FoodPlaceID == patientAtFoodPlace.FoodPlace.FoodPlaceID);
-                        var pcity = ctx.Cities.FirstOrDefault(c => c.CityID == patient.City.CityID);
-                        var fcity = ctx.Cities.FirstOrDefault(c => c.CityID == patientAtFoodPlace.FoodPlace.City.CityID);
-                        var pcountry = ctx.Countries.FirstOrDefault(c => c.CountryID == pcity.Country.CountryID);
-                        var fcountry = ctx.Countries.FirstOrDefault(c => c.CountryID == fcity.Country.CountryID);
-                        var salutation = ctx.Salutations.FirstOrDefault(s => s.SalutationID == patient.Salutation.SalutationID);
-                        var gender = ctx.Genders.FirstOrDefault(g => g.GenderID == patient.Gender.GenderID);
+                    var patient = ctx.Persons.FirstOrDefault(p => p.PersonID == patientAtFoodPlace.Patient.PersonID);
+                    var foodplace = ctx.FoodPlaces.FirstOrDefault(f => f.FoodPlaceID == patientAtFoodPlace.FoodPlace.FoodPlaceID);
+                    var pcity = ctx.Cities.FirstOrDefault(c => c.CityID == patient.City.CityID);
+                    var fcity = ctx.Cities.FirstOrDefault(c => c.CityID == patientAtFoodPlace.FoodPlace.City.CityID);
+                    var pcountry = ctx.Countries.FirstOrDefault(c => c.CountryID == pcity.Country.CountryID);
+                    var fcountry = ctx.Countries.FirstOrDefault(c => c.CountryID == fcity.Country.CountryID);
+                    var salutation = ctx.Salutations.FirstOrDefault(s => s.SalutationID == patient.Salutation.SalutationID);
+                    var gender = ctx.Genders.FirstOrDefault(g => g.GenderID == patient.Gender.GenderID);
 
-                        ctx.Cities.Attach(pcity);
-                        ctx.Cities.Attach(fcity);
-                        ctx.Countries.Attach(pcountry);
-                        ctx.Countries.Attach(fcountry);
-                        ctx.Genders.Attach(gender);
-                        ctx.Salutations.Attach(salutation);
-                        ctx.Persons.Attach(patient);
-                        ctx.FoodPlaces.Attach(foodplace);
+                    ctx.Cities.Attach(pcity);
+                    ctx.Cities.Attach(fcity);
+                    ctx.Countries.Attach(pcountry);
+                    ctx.Countries.Attach(fcountry);
+                    ctx.Genders.Attach(gender);
+                    ctx.Salutations.Attach(salutation);
+                    ctx.Persons.Attach(patient);
+                    ctx.FoodPlaces.Attach(foodplace);
 
-                        patientAtFoodPlace.FoodPlace = foodplace;
-                        patientAtFoodPlace.Patient = patient;
+                    patientAtFoodPlace.FoodPlace = foodplace;
+                    patientAtFoodPlace.Patient = patient;
 
-                        ctx.PatientAtFoodPlaces.Add(patientAtFoodPlace);
-                        ctx.SaveChanges();
-                        return true;
-                    }
+                    ctx.PatientAtFoodPlaces.Add(patientAtFoodPlace);
+                    ctx.SaveChanges();
                 }
+                return true;
             }
             catch (Exception e)
             {
