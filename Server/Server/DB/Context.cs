@@ -108,8 +108,7 @@ namespace Server.DB
             modelBuilder.Entity<FoodPlace>()
                 .Property(f => f.Name)
                 .HasMaxLength(50)
-                .IsRequired()
-                .IsUnique();
+                .IsRequired();
 
             modelBuilder.Entity<FoodPlace>()
                 .Property(f => f.Streetname)
