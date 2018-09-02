@@ -33,10 +33,7 @@
 Please be patient and don't refresh the page.</p>
 </div>
     <div id="buttons">
-        <input id="buttonCluster" type="button" value="Open/Close Clusters" onclick="clusterByHubsize()"/> 
-    </div>
-    <div id="stabilisationBox">
-        Stabilize when clustering:<input type="checkbox" id="stabilizeCheckbox">
+        <input id="buttonCluster" type="button" value="Close Clusters" onclick="clusterByHubsize()"/>
     </div>
 
 <div id="mynetwork"></div>
@@ -83,29 +80,8 @@ Please be patient and don't refresh the page.</p>
             };
             network.clusterByHubsize(undefined, clusterOptionsByData);
         }
-        else {
-            openClusters();
-        }
-    };
-    clusterByHubsize();
-
-    function openClusters() {
-        var newClusters = [];
-        for (var i = 0; i < clusters.length; i++) {
-            try {
-                network.openCluster(clusters[i].id);
-            }
-            catch {
-                continue;
-            }
-        }
-        if (document.getElementById('stabilizeCheckbox').checked === true) {
-            network.stabilize();
-        }
         clusterIndex = 0;
-        clusters = newClusters;
     };
-
 </script>
 </body>
 </html>
