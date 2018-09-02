@@ -13,12 +13,12 @@
         </Grid.ColumnDefinitions>
         <Grid HorizontalAlignment="Left" Height="565" VerticalAlignment="Top" Width="200
               " Grid.ColumnSpan="2">
-            <Button Content="Home" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_Home"/>
-            <Button Content="Add Patient" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="190" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_AddPatient"/>
-            <Button Content="View Doctors" HorizontalAlignment="Left" Margin="10,471,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewDoctors"/>
-            <Button Content="View Strains" HorizontalAlignment="Left" Margin="10,542,0,-43" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewStrains"/>
-            <Button Content="Add Foodplace" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddFoodplace"/>
-            <Button Content="Add Exam" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="190" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddExam"/>
+            <Button Content="Home" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="180" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_Home"/>
+            <Button Content="Add Patient" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="180" Height="66" FontSize="24" FontFamily="Tahoma" Click="Button_Click_AddPatient"/>
+            <Button Content="View Doctors" HorizontalAlignment="Left" Margin="10,471,0,0" VerticalAlignment="Top" Width="180" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewDoctors"/>
+            <Button Content="View Strains" HorizontalAlignment="Left" Margin="10,542,0,-43" VerticalAlignment="Top" Width="180" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_ViewStrains"/>
+            <Button Content="Add Foodplace" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="180" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddFoodplace"/>
+            <Button Content="Add Exam" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="180" Height="66" FontFamily="Tahoma" FontSize="24" Click="Button_Click_AddExam"/>
             <Image HorizontalAlignment="Left" Height="187" VerticalAlignment="Top" Width="200" Source="Images/eheclogo.png"/>
       
     </Grid>

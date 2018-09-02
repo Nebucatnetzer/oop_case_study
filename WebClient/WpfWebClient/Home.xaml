@@ -9,15 +9,21 @@
       Title="Home" Width="593" Height="565">
 
     <Grid Width="593" Height="565">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="98*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
         <Label Content="Willkommen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="48" Height="61" Width="272"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="475" Width="573" FontSize="20"><Run Text="Haben Sie die Applikation zum ersten Mal gestartet"/><Run Text="?"/><LineBreak/><Run/><LineBreak/><Run Text="1. Erstellen Sie neue Patienten"/><LineBreak/><Run Text="2. "/><Run Text="Generieren "/><Run Text="Sie neue Bakterienstämme"/><Run Text=" "/><LineBreak/><Run/><LineBreak/><Run Text="Enter desired letters"/><Run Text=" per strain"/><Run Text=": "/><Run Text="&#x9;"/><InlineUIContainer>
+        <TextBlock HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="475" Width="573" FontSize="20" Grid.RowSpan="2"><Run Text="Haben Sie die Applikation zum ersten Mal gestartet"/><Run Text="?"/><LineBreak/><Run/><LineBreak/><Run Text="1. Erstellen Sie neue Patienten"/><LineBreak/><Run Text="2. "/><Run Text="Generieren "/><Run Text="Sie neue Bakterienstämme"/><Run Text=" "/><LineBreak/><Run/><LineBreak/><Run Text="Enter desired letters"/><Run Text=" per strain"/><Run Text=": "/><Run Text="&#x9;"/><InlineUIContainer>
                 <TextBox x:Name="txtNumLetters" Height="30" TextWrapping="Wrap" Text="5" Width="120"/>
             </InlineUIContainer><LineBreak/><Run Text="Enter desired"/><Run Text=" amount of"/><Run Text=" strains: "/><Run Text="&#x9;"/><InlineUIContainer>
-                <TextBox x:Name="txtNumStrains" Height="30" TextWrapping="Wrap" Text="100" Width="120"/>
+                <TextBox x:Name="txtNumStrains" Height="30" TextWrapping="Wrap" Text="10" Width="120"/>
             </InlineUIContainer><LineBreak/><LineBreak/><InlineUIContainer>
-                <Button x:Name="btnRandomStrainGenerator" Content="CREATE RANDOM STRAINS" Width="580" Height="34" Click="btnRandomStrainGenerator_Click"/>
-            </InlineUIContainer><Run Text="&#x9;"/><LineBreak/><Run Text="3. Erfassen Sie einen neuen Fall"/><Run Text=" oder erstellen Sie Testdaten. "/><Run/><LineBreak/><Run Text="4. "/><Run Text="Erfassen Sie neue FoodPlaces oder erstellen Sie Testdaten"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><InlineUIContainer>
-                <Button Content="CREATE TESTDATA" Width="582" Click="btnCreateTestdata_Click"/>
+                <Button x:Name="btnRandomStrainGenerator" Content="CREATE RANDOM STRAINS" Width="572" Height="34" Click="btnRandomStrainGenerator_Click"/>
+            </InlineUIContainer><Run Text="&#x9;"/><LineBreak/><Run Text="3. Erfassen Sie einen neuen Fall"/><Run Text=" oder erstellen Sie Testdaten. "/><Run/><LineBreak/><Run Text="4. "/><Run Text="Erfassen Sie neue FoodPlaces oder erstellen Sie Testdaten"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run Text="Anzahl gewünschter Testdaten: "/><Run Text="&#x9;"/><InlineUIContainer>
+                <TextBox x:Name="txtNumberofTestdata" Height="27" InputMethod.IsInputMethodEnabled="False" TextWrapping="Wrap" Text="200" UseLayoutRounding="True" Width="83" d:DesignUseLayoutRounding="True"/>
+            </InlineUIContainer><LineBreak/><Run/><LineBreak/><InlineUIContainer>
+                <Button Content="CREATE TESTDATA" Width="570" Click="btnCreateTestdata_Click"/>
             </InlineUIContainer><LineBreak/><Run/><LineBreak/><LineBreak/></TextBlock>
 
     </Grid>

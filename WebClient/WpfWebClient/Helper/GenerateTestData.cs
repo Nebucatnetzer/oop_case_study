@@ -76,12 +76,15 @@ namespace WpfWebClient.Helper
                 i++;
             }
 
+            client.Close();
+
             return Foodplaces;
+
         }
 
 
 
-        public static List<PatientAtFoodPlace> CreatePatientAtFoodPlaces()
+        public static List<PatientAtFoodPlace> CreatePatientAtFoodPlaces(int userinput)
         {
             WpfWebClient.ServiceReferenceEHEC.ServiceClient client = new WpfWebClient.ServiceReferenceEHEC.ServiceClient();
             List<WpfWebClient.ServiceReferenceEHEC.FoodPlace> foodPlaces = new List<ServiceReferenceEHEC.FoodPlace>(client.GetFoodPlaces());
@@ -103,14 +106,15 @@ namespace WpfWebClient.Helper
                 
                 patf.FoodPlace = foodpl;
                 patf.Patient = patient;
-                //patf.PatientID = i;
                 patf.VistingDate = new DateTime(2005, 12, 20);
 
                 PatientsAtFoodPlaces.Add(patf);
                 
                 i++;
 
-            } while (i < 5);
+            } while (i < userinput);
+
+            client.Close();
 
             return PatientsAtFoodPlaces;
         }
