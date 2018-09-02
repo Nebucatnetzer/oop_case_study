@@ -15,14 +15,17 @@ namespace Server.Models
             this.Patients = new List<Person>();
             this.FoodPlaces = new List<FoodPlace>();
             List <FoodPlace> RawFoodPlaces = new List<FoodPlace>();
+            List <Person> RawPatients = new List<Person>();
             PatientAtFoodPlaceDB relationsDB = new PatientAtFoodPlaceDB();
             this.Relations = new List<PatientAtFoodPlace>(relationsDB.GetAllRelations());
             foreach (var relation in this.Relations)
             {
-                this.Patients.Add(relation.Patient);
+                RawPatients.Add(relation.Patient);
                 RawFoodPlaces.Add(relation.FoodPlace);
             }
             var unique_foodplaces = new HashSet<FoodPlace>(RawFoodPlaces);
+            var unique_patients = new HashSet<Person>(RawPatients);
+            this.Patients = unique_patients.ToList();
             this.FoodPlaces = unique_foodplaces.ToList();
         }
         public List<Node> GenerateNodes()
