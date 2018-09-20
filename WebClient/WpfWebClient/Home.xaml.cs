@@ -98,8 +98,6 @@ namespace WpfWebClient
             }
 
             // create a bunch of people at foodplaces
-
-
             var patientsatfps = GenerateTestData.CreatePatientAtFoodPlaces(int.Parse(txtNumberofTestdata.Text));
 
             foreach (var f in patientsatfps)

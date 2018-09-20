@@ -68,9 +68,9 @@ namespace WpfWebClient
 
             Person p = new Person();
 
-            // if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
-            // if (ComboBoxGenders.SelectedValue != null && ComboBoxGenders.SelectedValue is Gender)
-            // if (ComboBoxCities.SelectedValue != null && ComboBoxCities.SelectedValue is City)
+            if (ComboBoxSalutations.SelectedValue != null && ComboBoxSalutations.SelectedValue is Salutation)
+            if (ComboBoxGenders.SelectedValue != null && ComboBoxGenders.SelectedValue is Gender)
+            if (ComboBoxCities.SelectedValue != null && ComboBoxCities.SelectedValue is City)
 
             // Pick all selected fields and send object to client
             p.Salutation =  (Salutation)ComboBoxSalutations.SelectedValue;

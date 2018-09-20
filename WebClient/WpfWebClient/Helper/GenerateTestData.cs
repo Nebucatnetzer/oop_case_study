@@ -96,7 +96,7 @@ namespace WpfWebClient.Helper
 
             do
             {
-                PatientAtFoodPlace patf = new PatientAtFoodPlace();
+                PatientAtFoodPlace patfgen = new PatientAtFoodPlace();
 
                 int randnumFP = random.Next(0, foodPlaces.Count());
                 FoodPlace foodpl = foodPlaces[randnumFP];
@@ -104,11 +104,11 @@ namespace WpfWebClient.Helper
                 int randnumP = random.Next(0, patients.Count());
                 Person patient = patients[randnumP];
                 
-                patf.FoodPlace = foodpl;
-                patf.Patient = patient;
-                patf.VistingDate = new DateTime(2005, 12, 20);
+                patfgen.FoodPlace = foodpl;
+                patfgen.Patient = patient;
+                patfgen.VistingDate = new DateTime(2005, 12, 20);
 
-                PatientsAtFoodPlaces.Add(patf);
+                PatientsAtFoodPlaces.Add(patfgen);
                 
                 i++;
 
